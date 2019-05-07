@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources xmlns:tools="http://schemas.android.com/tools">
+    <color name="colorPrimary">#3F51B5</color>
+    <color name="colorPrimaryDark">#274358</color> <!--303F9F-->
+    <color name="colorAccent">#538CC2</color>
+    <color name="crynetDarkBlue" tools:keep="@color/crynetDarkBlue">#142435</color>
+    <color name="crynetBlue">#21364C</color>
+    <color name="crynetBrightBlue">#36597B</color>
+    <color name="crynetBrighterBlue">#538CC2</color>
+    <color name="crynetBrightestBlue">#84B3DA</color>
+
+    <color name="crynetWhite">#ffffff</color>
+    <color name="crynetBlack" tools:keep="@color/crynetBlack">#221E1F</color>
+    <color name="crynetOrange" tools:keep="@color/crynetOrange">#f5931e</color>
+
+    <color name="crynetTranslucidWhite">#3cffffff</color>
+    <color name="crynetTranslucidGrey">#0affffff</color>
+    <color name="crynetTranslucidBlack" tools:keep="@color/crynetTranslucidBlack">#3c000000</color>
+<!--
+    <color name="crynetBlue">#36566D</color>
+    <color name="crynetBrightBlue">#446e8c</color>
+    <color name="crynetDarkBlue">#2f4c61</color>
+    <color name="crynetWhite">#ffffff</color>
+-->
+</resources>

@@ -1,0 +1,28 @@
+<?xml version="1.0"?>
+<Mails>
+    <Mail>
+        <Subject>Usted ha realizado su entrega en la tarea Práctica 19</Subject>
+        <Body>Usted ha realizado una entrega en la tarea 'Práctica 19 - POO con Python 3'
+
+Puede ver el estado de su entrega.
+</Body>
+    </Mail>
+    <Mail>
+        <Subject>¡Un artículo de tu lista de deseados está de oferta!</Subject>
+        <Body>
+¡Hola, Jacob Hargreave!	
+Los siguientes artículos de tus deseados están de oferta:</Body>
+    </Mail>
+    <Mail>
+        <Subject>Your two-factor sign in code</Subject>
+        <Body>Hi Juanjo!
+
+You recently tried to log in from a new device, browser, or location. In order to complete your login, please use the following code. Learn more.</Body>
+    </Mail>
+    <Mail>
+        <Subject>Tu pedido está listo para la recogida en Amazon Locker</Subject>
+        <Body>Hola Juan:
+
+Tu pedido de Amazon con 3 productos está listo para la recogida en Amazon Locker</Body>
+    </Mail>
+</Mails>

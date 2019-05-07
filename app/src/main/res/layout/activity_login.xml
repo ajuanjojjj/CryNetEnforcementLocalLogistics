@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:gravity="center_horizontal"
+    android:orientation="vertical"
+    style="@style/CrynetContainer"
+    tools:context=".LoginActivity">
+
+
+    <!-- Login progress -->
+    <ProgressBar
+        android:id="@+id/login_progress"
+        style="?android:attr/progressBarStyleLarge"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="8dp"
+        android:visibility="gone" />
+
+    <ScrollView
+        android:id="@+id/login_form"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <LinearLayout
+            android:id="@+id/email_login_form"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:orientation="vertical">
+
+            <ImageView
+                android:id="@+id/imageView"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:adjustViewBounds="true"
+                android:contentDescription="@string/login_image_logo"
+                android:scaleType="fitXY"
+                app:srcCompat="@drawable/crynet_systems" />
+
+            <EditText
+                android:id="@+id/email"
+                android:autofillHints="AUTOFILL_HINT_EMAIL_ADDRESS"
+                tools:targetApi="o"
+                style="@style/crynetField.Login"
+                android:hint="@string/prompt_email"
+                android:inputType="textEmailAddress"/>
+
+            <EditText
+                android:id="@+id/password"
+                android:autofillHints="AUTOFILL_HINT_PASSWORD"
+                tools:targetApi="o"
+                style="@style/crynetField.Login"
+                android:hint="@string/prompt_password"
+                android:inputType="textPassword"/>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginTop="16dp"
+                android:orientation="horizontal">
+
+                <Button
+                    android:id="@+id/btn_abort"
+                    style="@style/crynetButton"
+                    android:text="@string/action_sign_in_cancel" />
+
+
+                <Button
+                    android:id="@+id/btn_signIn"
+                    style="@style/crynetButton"
+                    android:text="@string/action_sign_in" />
+            </LinearLayout>
+
+        </LinearLayout>
+    </ScrollView>
+</LinearLayout>

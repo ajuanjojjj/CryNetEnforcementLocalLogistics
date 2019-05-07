@@ -1,0 +1,155 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:padding="3dp"
+    style="@style/CrynetContainer"
+    android:orientation="vertical">
+
+    <ImageView
+        android:id="@+id/imageView7"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:adjustViewBounds="true"
+        android:contentDescription="@string/login_image_logo"
+        android:scaleType="fitXY"
+        app:srcCompat="@drawable/crynet_systems" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:gravity="center"
+        android:orientation="vertical">
+
+        <TextView
+            android:id="@+id/txt_typedKey"
+            style="@style/crynetField.Mail"
+            android:fontFamily="@font/cell"
+            android:text=""
+            android:textSize="24sp"
+            android:textStyle="bold" />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/lyt_botonera"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <Button
+                android:id="@+id/btn_keypad0"
+                style="@style/crynetKeypadButton" />
+
+            <Button
+                android:id="@+id/btn_keypad1"
+                style="@style/crynetKeypadButton"/>
+
+            <Button
+                android:id="@+id/btn_keypad2"
+                style="@style/crynetKeypadButton" />
+
+            <Button
+                android:id="@+id/btn_keypad3"
+                style="@style/crynetKeypadButton"/>
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <Button
+                android:id="@+id/btn_keypad4"
+                style="@style/crynetKeypadButton" />
+
+            <Button
+                android:id="@+id/btn_keypad5"
+                style="@style/crynetKeypadButton" />
+
+            <Button
+                android:id="@+id/btn_keypad6"
+                style="@style/crynetKeypadButton" />
+
+            <Button
+                android:id="@+id/btn_keypad7"
+                style="@style/crynetKeypadButton"/>
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <Button
+                android:id="@+id/btn_keypad8"
+                style="@style/crynetKeypadButton" />
+
+            <Button
+                android:id="@+id/btn_keypad9"
+                style="@style/crynetKeypadButton" />
+
+            <Button
+                android:id="@+id/btn_keypad10"
+                style="@style/crynetKeypadButton" />
+
+            <Button
+                android:id="@+id/btn_keypad11"
+                style="@style/crynetKeypadButton" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <Button
+                android:id="@+id/btn_keypad12"
+                style="@style/crynetKeypadButton" />
+
+            <Button
+                android:id="@+id/btn_keypad13"
+                style="@style/crynetKeypadButton" />
+
+            <Button
+                android:id="@+id/btn_keypad14"
+                style="@style/crynetKeypadButton" />
+
+            <Button
+                android:id="@+id/btn_keypad15"
+                style="@style/crynetKeypadButton"/>
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <Button
+                android:id="@+id/btn_keypad16"
+                style="@style/crynetKeypadButton" />
+
+            <Button
+                android:id="@+id/btn_keypad17"
+                style="@style/crynetKeypadButton"/>
+
+            <Button
+                android:id="@+id/btn_keypad18"
+                style="@style/crynetKeypadButton"/>
+
+            <Button
+                android:id="@+id/btn_keypad19"
+                style="@style/crynetKeypadButton"/>
+        </LinearLayout>
+
+
+    </LinearLayout>
+
+</LinearLayout>

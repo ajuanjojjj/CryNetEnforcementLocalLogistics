@@ -1,0 +1,107 @@
+<resources>
+
+    <!-- Base application theme. -->
+    <style name="AppTheme" parent="Theme.AppCompat.NoActionBar">
+        <!-- Customize your theme here. -->
+        <item name="android:windowNoTitle">true</item>
+        <item name="android:windowActionBar">false</item>
+        <item name="android:windowFullscreen">true</item>
+        <item name="android:windowContentOverlay">@null</item>
+        <item name="colorPrimary">@color/colorPrimary</item>
+        <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
+        <item name="colorAccent">@color/colorAccent</item>
+    </style>
+
+    <style name="CrynetContainer">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">match_parent</item>
+        <item name="android:background">@color/crynetBlue</item>
+        <item name="android:paddingBottom">@dimen/activity_vertical_margin</item>
+        <item name="android:paddingTop">@dimen/activity_vertical_margin</item>
+        <item name="android:paddingLeft">@dimen/activity_horizontal_margin</item>
+        <item name="android:paddingRight">@dimen/activity_horizontal_margin</item>
+
+    </style>
+
+    <style name="crynetButton">
+        <item name="android:background">@drawable/button_with_border</item>
+        <!--android:background="?attr/selectableItemBackground"-->
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_marginLeft">10dp</item>
+        <item name="android:layout_marginRight">10dp</item>
+        <item name="android:layout_weight">1</item>
+        <item name="android:textColor">@color/crynetBrightestBlue</item>
+        <item name="android:textSize">18sp</item>
+    </style>
+    
+    <style name="crynetKeypadButton">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">70dp</item>
+        <item name="android:background">@drawable/button_with_corner</item>
+        <item name="android:fontFamily">@font/cell</item>
+        <item name="android:textAllCaps">true</item>
+        <item name="android:textSize">30sp</item>
+        <item name="android:textStyle">bold</item>
+    </style>
+
+    <style name="CrynetButtonIcon">
+        <item name="android:layout_width">150dp</item>
+        <item name="android:layout_height">120dp</item>
+    </style>
+
+    <style name="crynetField">
+        <item name="android:textColor">@color/crynetWhite</item>
+        <item name="android:gravity">center</item>
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:textColorHint">@color/crynetBrighterBlue</item>
+    </style>
+
+    <style name="crynetField.Mail">
+        <item name="android:fontFamily">@font/roboto_black</item>
+        <item name="android:textAlignment">center</item>
+        <item name="android:textSize">18sp</item>
+    </style>
+
+    <style name="crynetField.Mail.Header">
+        <item name="android:fontFamily">@font/cell</item>
+        <item name="android:textSize">5sp</item>
+    </style>
+
+    <style name="crynetField.Mail.User">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:textSize">14sp</item>
+        <item name="android:textStyle">bold</item>
+    </style>
+
+    <style name="crynetField.Mail.Mail">
+        <item name="android:fontFamily">sans-serif</item>
+        <item name="android:textAlignment">textStart</item>
+        <item name="android:textSize">14sp</item>
+    </style>
+
+    <style name="crynetField.Mail.Mail.Header">
+        <item name="android:textSize">18sp</item>
+        <item name="android:textStyle">bold</item>
+    </style>
+
+    <style name="crynetField.Login">
+        <item name="android:layout_marginLeft">40dp</item>
+        <item name="android:layout_marginRight">48dp</item>
+        <item name="android:maxLines">1</item>
+        <item name="android:singleLine">true</item>
+    </style>
+
+    <style name="crynetLabelEmployee">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:textColor">@color/crynetWhite</item>
+        <item name="android:textSize">18sp</item>
+        <item name="android:fontFamily">@font/cell</item>
+    </style>
+    <style name="crynetLabelEmployee.Label">
+        <item name="android:layout_marginTop">10dp</item>
+        <item name="android:textSize">10sp</item>
+    </style>
+</resources>

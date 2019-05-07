@@ -1,0 +1,18 @@
+<?xml version="1.0"?>
+<GPUs>
+    <GPU>
+        <Uri>http://www.google.com</Uri>
+    </GPU>
+
+    <GPU>
+        <Uri>http://davidtabernero.net</Uri>
+    </GPU>
+
+    <GPU>
+        <Uri>http://gaben.tv</Uri>
+    </GPU>
+
+    <GPU>
+        <Uri>http://ea.com</Uri>
+    </GPU>
+</GPUs>
