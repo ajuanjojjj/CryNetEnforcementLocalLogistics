@@ -2,8 +2,8 @@
 [![License: CC BY-ND 4.0](https://licensebuttons.net/l/by-nd/4.0/80x15.png)](https://creativecommons.org/licenses/by-nd/4.0/)
 This work is licensed under a [Creative Commons Attribution-NoDerivatives 4.0 International](https://creativecommons.org/licenses/by-nd/4.0/) License.
 
-|Categoria	|	Tarea	|	ETA	|	Estado	|	Sprint |	-	|
-|---	|	---	|	---	|	---	|	--- |	---	|
+|Categoria	|	Tarea	|	ETA	|	Estado	|	Sprint |
+|---	|	---	|	---	|	---	|	--- |	
 |Desarrollo	|	Implementar vista Almacen	|	-	|	Pendiente	|	-	|
 |Desarrollo	|	Implementar vista Reporte	|	-	|	Pendiente	|	-	|
 |Desarrollo	|	Preparar hosting para servicios web	|	-	|	Pendiente	|	
