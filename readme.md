@@ -11,9 +11,9 @@ This work is licensed under a [Creative Commons Attribution-NoDerivatives 4.0 In
 |Desarrollo	|	Poner en funcionamiento la vista E-mail	|	-	|	Pendiente	|	-	|	-	|
 |Desarrollo	|	Arreglar la vista mapas	|	-	|	Pendiente	|	-	|	-	|
 |Desarrollo	|	Crear algoritmo de conversion de claves	|	-	|	Pendiente	|	-	|	-	|
-|Documentacion	|	Crear diagrama de clases	|	3	|	Pendiente	|	-	|	-	|
-|Documentacion	|	Crear diagrama de actividades	|	3	|	Pendiente	|	-	|	-	|
-|Documentacion	|	Crear diagrama de despligue	|	1	|	Por revisar	|	-	|	1	|
+|Documentacion	|	Crear diagrama de clases	|	3	|	Pendiente	|	1	|	-	|
+|Documentacion	|	Crear diagrama de actividades	|	3	|	En proceso	|	1	|	-	|
+|Documentacion	|	Crear diagrama de despligue	|	1	|	Por revisar	|	1	|	1	|
 |Documentacion	|	Crear diagrama de casos de uso	|	2	|	Por revisar	|	1	|	1.5	|
 |Documentacion	|	Crear memoria de proyecto	|	-	|	Pendiente	|	-	|	-	|
 |Documentacion	|	Documentar metodología ágil	|	-	|	Pendiente	|	-	|	-	|
