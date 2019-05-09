@@ -13,8 +13,8 @@ This work is licensed under a [Creative Commons Attribution-NoDerivatives 4.0 In
 |Desarrollo	|	Crear algoritmo de conversion de claves	|	-	|	Pendiente	|	-	|	-	|
 |Documentacion	|	Crear diagrama de clases	|	3	|	Pendiente	|	-	|	-	|
 |Documentacion	|	Crear diagrama de actividades	|	3	|	Pendiente	|	-	|	-	|
-|Documentacion	|	Crear diagrama de despligue	|	1	|	En proceso	|	-	|	-	|
-|Documentacion	|	Crear diagrama de casos de uso	|	2	|	Por testear	|	1	|	1.5	|
+|Documentacion	|	Crear diagrama de despligue	|	1	|	Por revisar	|	-	|	1	|
+|Documentacion	|	Crear diagrama de casos de uso	|	2	|	Por revisar	|	1	|	1.5	|
 |Documentacion	|	Crear memoria de proyecto	|	-	|	Pendiente	|	-	|	-	|
 |Documentacion	|	Documentar metodología ágil	|	-	|	Pendiente	|	-	|	-	|
 |Pruebas	|	Crear batería de pruebas para algoritmo claves	|	-	|	Pendiente	|	-	|	-	|
@@ -22,5 +22,6 @@ This work is licensed under a [Creative Commons Attribution-NoDerivatives 4.0 In
 |Pruebas	|	Desplegar en diferentes emuladores para buscar posibles nuevos problemas	|	-	|	Pendiente	|	-	|	-	|
 
 
-### Diagrama de casos de uso
-![Imagen del diagrama](/uml/CasosDeUso.png?raw=true)
+## Diagramas UML
+![Imagen del diagrama de casos de uso](/uml/CasosDeUso.png?raw=true)
+![Imagen del diagrama de despliegue](/uml/Despliegue.png?raw=true)
