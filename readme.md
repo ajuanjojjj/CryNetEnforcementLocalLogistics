@@ -20,3 +20,7 @@ This work is licensed under a [Creative Commons Attribution-NoDerivatives 4.0 In
 |Pruebas	|	Crear batería de pruebas para algoritmo claves	|	-	|	Pendiente	|	-	|	-	|
 |Pruebas	|	Probar navegacion y uso con usuarios	|	-	|	Pendiente	|	-	|	-	|
 |Pruebas	|	Desplegar en diferentes emuladores para buscar posibles nuevos problemas	|	-	|	Pendiente	|	-	|	-	|
+
+
+### Diagrama de casos de uso
+![Imagen del diagrama](/uml/CasosDeUso.png?raw=true)
