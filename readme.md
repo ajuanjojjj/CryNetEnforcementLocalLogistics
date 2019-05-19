@@ -34,7 +34,7 @@ This work is licensed under a [Creative Commons Attribution-NoDerivatives 4.0 In
 
 
 ## Diagramas UML
-![Imagen del diagrama de Entidad-Relacion](/uml/Diagrama E-R.png?raw=true)
+![Imagen del diagrama de Entidad Relacion](/uml/EntidadRelacion.png?raw=true)
 ![Imagen del diagrama de casos de uso](/uml/CasosDeUso.png?raw=true)
 ![Imagen del diagrama de despliegue](/uml/Despliegue.png?raw=true)
 #### Diagrama de clases
