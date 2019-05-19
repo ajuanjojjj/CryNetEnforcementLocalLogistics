@@ -13,7 +13,7 @@
     <string name="GPUName">Global Policy Update</string>
     <string name="GPUActivated">A new Global Policy Update now in effect, click for more info.</string>
     <string name="tempTextShort">Loren Ipsum</string>
-    <string name="online" tools:ignore="UnusedResources">Online</string>
+    <string name="online">Online</string>
     <string name="offline">Offline</string>
     <string name="tempEmpNo">00/0/000000</string>
     <string name="lblZona">ZONE: </string>
@@ -32,8 +32,8 @@
     <string name="btnResponderTodos">Responder a todos</string>
     <string name="map_logo">Logo del menu de mapa</string>
     <string name="notImplemented">Función no implementada</string>
-    <string name="main_email">Emails</string>
-    <string name="main_personal">Personal</string>
+    <string name="main_email">Area Personal</string>
+    <string name="main_personal">Empleados</string>
     <string name="main_wharehouse">Almacen</string>
     <string name="main_map">Map</string>
     <string name="main_keys">Keys</string>
