@@ -34,6 +34,7 @@ This work is licensed under a [Creative Commons Attribution-NoDerivatives 4.0 In
 
 
 ## Diagramas UML
+![Imagen del diagrama de Entidad-Relacion](/uml/Diagrama E-R.png?raw=true)
 ![Imagen del diagrama de casos de uso](/uml/CasosDeUso.png?raw=true)
 ![Imagen del diagrama de despliegue](/uml/Despliegue.png?raw=true)
 #### Diagrama de clases
@@ -45,3 +46,4 @@ This work is licensed under a [Creative Commons Attribution-NoDerivatives 4.0 In
 ![Imagen del diagrama de obtener datos](/uml/Actividad_ObtenerDatos.png?raw=true)
 ##### Diagrama de introducir clave
 ![Imagen del diagrama de key input](/uml/Actividad_InputKey.png?raw=true)
+
