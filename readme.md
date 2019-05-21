@@ -5,6 +5,7 @@ This work is licensed under a [Creative Commons Attribution-NoDerivatives 4.0 In
 |Categoria		|	Tarea											|	ETA	|	Estado		|	Sprint	| Spent |
 |---																|	---	|	---	|	---	|	---		|	--- |	
 |Desarrollo		|	Implementar vista Login							|	4	|	Terminada	|	1		|	4	|
+|Desarrollo		|	Implementar estilos globales					|	2	|	Terminada	|	1		|	3	|
 |Desarrollo		|	Implementar vista Principal						|	1	|	Terminada	|	1		|	1	|
 |Desarrollo		|	Implementar vista Area Personal					|	8	|	Terminada	|	1		|	9	|
 |Desarrollo		|	Implementar sub-vista Emails					|	2	|	Terminada	|	1		|	1.5	|
