@@ -21,7 +21,7 @@ This work is licensed under a [Creative Commons Attribution-NoDerivatives 4.0 In
 |Desarrollo		|	Mejorar la navegacion de la lista de personal	|	-	|	Pendiente	|	-		|	-	|
 |Desarrollo		|	Poner en funcionamiento la vista E-mail			|	-	|	Pendiente	|	-		|	-	|
 |Desarrollo		|	Arreglar la vista mapas							|	-	|	Pendiente	|	-		|	-	|
-|Desarrollo		|	Crear algoritmo de conversion de claves			|	2	|	Pendiente	|	3		|	-	|
+|Desarrollo		|	Crear algoritmo de conversion de claves			|	2	|	Terminado	|	3		|	3.5	|
 |Documentacion	|	Crear diagrama de clases						|	3	|	Por revisar	|	1		|	5.3	|
 |Documentacion	|	Crear diagrama de actividades					|	3	|	Por revisar	|	~1~ 2	|	1.5	|
 |Documentacion	|	Crear diagrama de despligue						|	1	|	Por revisar	|	1		|	1	|
