@@ -4,16 +4,16 @@ This work is licensed under a [Creative Commons Attribution-NoDerivatives 4.0 In
 
 |Categoria		|	Tarea											|	ETA	|	Estado		|	Sprint	| Spent |
 |---																|	---	|	---	|	---	|	---		|	--- |	
-|Desarrollo		|	Implementar vista Login							|	2	|	Terminada	|	1		|	2	|
-|Desarrollo		|	Implementar vista Principal						|	0.5	|	Terminada	|	1		|	0.5	|
-|Desarrollo		|	Implementar vista Area Personal					|	3	|	Terminada	|	1		|	4	|
-|Desarrollo		|	Implementar sub-vista Emails					|	0.5	|	Terminada	|	1		|	1	|
-|Desarrollo		|	Implementar sub-vista GPU						|	0.5	|	Terminada	|	1		|	0.5	|
-|Desarrollo		|	Implementar sub-vista Task						|	0.5	|	Terminada	|	1		|	0.5	|
-|Desarrollo		|	Implementar vista email en detalle				|	1	|	Terminada	|	1		|	1	|
-|Desarrollo		|	Implementar vista Map							|	1	|	Pendiente	|	3		|	2	|
-|Desarrollo		|	Implementar vista Empleados						|	3	|	Pendiente	|	3		|	4	|
-|Desarrollo		|	Implementar vista Keypad						|	4	|	Terminada	|	1		|	3	|
+|Desarrollo		|	Implementar vista Login							|	4	|	Terminada	|	1		|	4	|
+|Desarrollo		|	Implementar vista Principal						|	1	|	Terminada	|	1		|	1	|
+|Desarrollo		|	Implementar vista Area Personal					|	8	|	Terminada	|	1		|	9	|
+|Desarrollo		|	Implementar sub-vista Emails					|	2	|	Terminada	|	1		|	1.5	|
+|Desarrollo		|	Implementar sub-vista GPU						|	1	|	Terminada	|	1		|	1	|
+|Desarrollo		|	Implementar sub-vista Task						|	1	|	Terminada	|	1		|	0.5	|
+|Desarrollo		|	Implementar vista email en detalle				|	2	|	Terminada	|	1		|	2	|
+|Desarrollo		|	Implementar vista Map							|	4	|	Pendiente	|	3		|	3	|
+|Desarrollo		|	Implementar vista Empleados						|	8	|	Pendiente	|	3		|	9	|
+|Desarrollo		|	Implementar vista Keypad						|	6	|	Terminada	|	1		|	7	|
 |Desarrollo		|	Implementar vista Almacen						|	-	|	Pendiente	|	-		|	-	|
 |Desarrollo		|	Implementar vista Reporte						|	-	|	Pendiente	|	-		|	-	|
 |Desarrollo		|	Preparar hosting para servicios web				|	-	|	Pendiente	|	-		|	-	|
