@@ -7,6 +7,8 @@ import android.support.test.runner.AndroidJUnit4;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 
+import java.util.Random;
+
 import static org.junit.Assert.*;
 
 /**
@@ -23,4 +25,15 @@ public class ExampleInstrumentedTest {
 
         assertEquals("com.dam2.crynetenforcementlocallogistics", appContext.getPackageName());
     }
+
+    @Test
+    public void checkKeypadWorks() {
+        checkKeypadWorks(new Random().nextLong());
+    }
+
+    public void checkKeypadWorks(long key) {
+
+    }
+
+
 }
