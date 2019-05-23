@@ -16,15 +16,15 @@ import java.util.Arrays;
 import java.util.Stack;
 
 public class KeypadActivity extends AppCompatActivity implements NfcAdapter.CreateNdefMessageCallback {
+    public final static String LETTERS = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";//NON-NLS
+    public final static String NUMBERS = "1234567890";//NON-NLS
+    public static final int LARGO_KEY = 12;
+
     private static final String BTN_KEYPAD = "btn_keypad";  //NON-NLS
     private static final String TEXT_PLAIN = "text/plain";   //NON-NLS
 
-    private final static String LETTERS = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";//NON-NLS
-    private final static String NUMBERS = "1234567890";//NON-NLS
-    private static final int LARGO_KEY = 12;
-
     private final Button[] botones = new Button[20];
-    private static final byte salt = (byte) 136; //TODO Pruebas sobre aleatoriedad en matrix
+    public static final byte salt = (byte) 136; //TODO Pruebas sobre aleatoriedad en matrix
     private int pos = 0;
 
     private char[] typedValues;
@@ -51,24 +51,13 @@ public class KeypadActivity extends AppCompatActivity implements NfcAdapter.Crea
         typedValues = new char[LARGO_KEY];
 
         TextView view = findViewById(R.id.txt_typedKey);
-        view.setText(generateLabel());
+        view.setText(generateLabel(typedChars));
 
         for (int i = 0; i < botones.length; i++) {
             int id = getResources().getIdentifier(BTN_KEYPAD + i, "id", getPackageName()); //NON-NLS
             botones[i] = findViewById(id);
         }
         fillButtons();
-    }
-
-    private static String generateLabel(char[] typedChars) {
-        StringBuilder builder = new StringBuilder();
-        for (int i = 0; i < typedChars.length; i++) {
-            char typedChar = typedChars[i];
-            if (i != 0 && i % 4 == 0)
-                builder.append('-');
-            builder.append(typedChar == 0 ? "\uF07F" : typedChar);
-        }
-        return builder.toString();
     }
 
     private void fillButtons() {
@@ -91,8 +80,30 @@ public class KeypadActivity extends AppCompatActivity implements NfcAdapter.Crea
 
     }
 
-    private static char[] generateMatrix(int pos, int salt) {
-        double step = Math.abs(salt ^ pos);
+    protected void pulsarBoton(View v) {
+        Tag tag = (Tag) v.getTag();
+        TextView view = findViewById(R.id.txt_typedKey);
+
+        typedChars[pos] = tag.getRepresent();
+        typedValues[pos] = tag.getValue();
+
+        view.setText(generateLabel(typedChars));
+
+        pos++;
+        //salt = (byte) (salt ^ pos);
+        if (pos >= LARGO_KEY) {
+            Toast.makeText(this, String.format("Secuence= %s\nPresses= %s", new String(typedChars), new String(typedValues)), Toast.LENGTH_LONG).show();
+            typedChars = new char[LARGO_KEY];
+            typedValues = new char[LARGO_KEY];
+            pos = 0;
+            view.setText(generateLabel(typedChars));
+        }
+
+        fillButtons();
+    }
+
+    public static char[] generateMatrix(int pos, int salt) {
+        int seed = Math.abs(salt ^ pos);
         char[] matriz = new char[20];
 
         Stack<Character> pilaLetter = new Stack<>();
@@ -104,33 +115,32 @@ public class KeypadActivity extends AppCompatActivity implements NfcAdapter.Crea
             pilaNumber.add(character);
 
         for (int i = 0; i < 16; i++) {
-            matriz[i] = pilaLetter.remove((int) (step * (i + 1)) % pilaLetter.size());
+            matriz[i] = pilaLetter.remove( randomLong(seed) % pilaLetter.size());
         }
 
         for (int i = 16; i < 20; i++) {
-            matriz[i] = pilaNumber.remove((int) (step * (i + 1)) % pilaNumber.size());
+            matriz[i] = pilaNumber.remove( randomLong(seed) % pilaNumber.size());
         }
 
         return matriz;
     }
 
-    protected void pulsarBoton(View v) {
-        Tag tag = (Tag) v.getTag();
-        TextView view = findViewById(R.id.txt_typedKey);
-
-
-        view.setText(generateLabel(typedChars));
-
-        pos++;
-        if (pos >= LARGO_KEY) {
-            Toast.makeText(this, String.format("Secuence= %s\nPresses= %s", new String(typedChars), new String(typedValues)), Toast.LENGTH_LONG).show();
-            typedChars = new char[LARGO_KEY];
-            typedValues = new char[LARGO_KEY];
-            pos = 0;
-            view.setText(generateLabel(typedChars));
+    public static String generateLabel(char[] typedChars) {
+        StringBuilder builder = new StringBuilder();
+        for (int i = 0; i < typedChars.length; i++) {
+            char typedChar = typedChars[i];
+            if (i != 0 && i % 4 == 0)
+                builder.append('-');
+            builder.append(typedChar == 0 ? "\uF07F" : typedChar);
         }
+        return builder.toString();
+    }
 
-        fillButtons();
+    public static int randomLong(int seed) {
+        seed ^= (seed << 21);
+        seed ^= (seed >>> 35);
+        seed ^= (seed << 4);
+        return Math.abs(seed);
     }
 
     @Override

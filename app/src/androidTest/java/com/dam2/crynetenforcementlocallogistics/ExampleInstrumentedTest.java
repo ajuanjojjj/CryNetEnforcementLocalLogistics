@@ -26,6 +26,8 @@ public class ExampleInstrumentedTest {
         assertEquals("com.dam2.crynetenforcementlocallogistics", appContext.getPackageName());
     }
 
+
+
     @Test
     public void checkKeypadWorks() {
         checkKeypadWorks(new Random().nextLong());
@@ -33,6 +35,24 @@ public class ExampleInstrumentedTest {
 
     public void checkKeypadWorks(long key) {
 
+    }
+
+    public void countMatrixOcurrences(){
+        int sample = 999999999;
+        String cosa = KeypadActivity.LETTERS + KeypadActivity.NUMBERS;
+
+        int[] ocurrencias = new int[cosa.length()];
+
+        for (int i = 0; i < cosa.length(); i++){
+            ocurrencias[i] = cosa.charAt(i);
+        }
+
+        for (int i = 0; i < sample; i++) {
+            char[] matrix = KeypadActivity.generateMatrix(i % KeypadActivity.LARGO_KEY, KeypadActivity.salt);
+            for (char letra: matrix) {
+                ocurrencias[cosa.indexOf(letra + "")]++;
+            }
+        }
     }
 
 
