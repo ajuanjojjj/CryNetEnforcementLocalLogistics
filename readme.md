@@ -17,7 +17,7 @@ This work is licensed under a [Creative Commons Attribution-NoDerivatives 4.0 In
 |Desarrollo		|	Implementar vista Keypad						|	6	|	Terminada	|	1		|	9	|
 |Desarrollo		|	Implementar vista Almacen						|	-	|	Pendiente	|	-		|	-	|
 |Desarrollo		|	Implementar vista Reporte						|	-	|	Pendiente	|	-		|	-	|
-|Desarrollo		|	Preparar hosting para servicios web				|	2	|	Pendiente	|	3		|	-	|
+|Desarrollo		|	Preparar hosting para servicios web				|	2	|	Pendiente	|	3		|	1	|
 |Desarrollo		|	Mejorar la navegacion de la lista de personal	|	-	|	Pendiente	|	-		|	-	|
 |Desarrollo		|	Poner en funcionamiento la vista E-mail			|	-	|	Pendiente	|	-		|	-	|
 |Desarrollo		|	Arreglar la vista mapas							|	-	|	Pendiente	|	-		|	-	|
