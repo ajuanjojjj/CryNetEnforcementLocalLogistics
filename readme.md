@@ -20,7 +20,7 @@ This work is licensed under a [Creative Commons Attribution-NoDerivatives 4.0 In
 |Desarrollo		|	Mejorar la navegacion de la lista de personal	|	-	|	Pendiente	|	-		|	-	|
 |Desarrollo		|	Poner en funcionamiento la vista E-mail			|	-	|	Pendiente	|	-		|	-	|
 |Desarrollo		|	Arreglar la vista mapas							|	-	|	Pendiente	|	-		|	-	|
-|Desarrollo		|	Crear algoritmo de conversion de claves			|	2	|	Terminado	|	3		|	5	|
+|Desarrollo		|	Crear algoritmo de conversion de claves			|	2	|	Terminado\*	|	3		|	7	|
 |Implementacion	|	Preparar hosting para servicios web				|	2	|	Pendiente	|	3		|	1	|
 |Documentacion	|	Crear diagrama de clases						|	3	|	Por revisar	|	1		|	5.3	|
 |Documentacion	|	Crear diagrama de actividades					|	3	|	Por revisar	|	~1~ 2	|	1.5	|
@@ -33,6 +33,7 @@ This work is licensed under a [Creative Commons Attribution-NoDerivatives 4.0 In
 |Pruebas		|	Probar navegacion y uso con usuarios			|	-	|	Pendiente	|	-		|	-	|
 |Pruebas		|	Desplegar en diferentes sistemas para testear	|	-	|	Pendiente	|	-		|	-	|
 
+\*Nota 27/5/2019: Tras lo que esta demostrando ser un pozo sin fondo de trabajo, la implementacion del algoritmo será una que no pasa los algoritmos de prueba en lo que a aleatoriedad se refiere, quedando con una dispersion relativamente alta.
 
 ## Diagramas UML
 ![Imagen del diagrama de Entidad Relacion](/uml/EntidadRelacion.png?raw=true)
