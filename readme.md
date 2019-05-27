@@ -29,7 +29,7 @@ This work is licensed under a [Creative Commons Attribution-NoDerivatives 4.0 In
 |Documentacion	|	Crear diagrama Entidad-Relacion					|	0.1	|	Terminado	|	2		|	0.2	|
 |Documentacion	|	Crear memoria de proyecto						|	-	|	Pendiente	|	-		|	-	|
 |Documentacion	|	Documentar metodología ágil						|	-	|	Pendiente	|	-		|	-	|
-|Pruebas		|	Crear batería de pruebas para algoritmo claves	|	-	|	Pendiente	|	-		|	2	|
+|Pruebas		|	Crear batería de pruebas para algoritmo claves	|	-	|	Pendiente	|	-		|	2.5	|
 |Pruebas		|	Probar navegacion y uso con usuarios			|	-	|	Pendiente	|	-		|	-	|
 |Pruebas		|	Desplegar en diferentes sistemas para testear	|	-	|	Pendiente	|	-		|	-	|
 
