@@ -26,7 +26,15 @@ public class ExampleInstrumentedTest {
         assertEquals("com.dam2.crynetenforcementlocallogistics", appContext.getPackageName());
     }
 
+    @Test
+    public void isMatrixGood(){
+        boolean meSirve;
+        int sample = 9999999;
+        int[] result = countMatrixOcurrences(sample);
+        double deviation = standardDeviation(result);
 
+        assertTrue(deviation < 10);
+    }
 
     @Test
     public void checkKeypadWorks() {
@@ -37,8 +45,7 @@ public class ExampleInstrumentedTest {
 
     }
 
-    public void countMatrixOcurrences(){
-        int sample = 999999999;
+    public int[] countMatrixOcurrences(int sample){
         String cosa = KeypadActivity.LETTERS + KeypadActivity.NUMBERS;
 
         int[] ocurrencias = new int[cosa.length()];
@@ -48,11 +55,30 @@ public class ExampleInstrumentedTest {
         }
 
         for (int i = 0; i < sample; i++) {
-            char[] matrix = KeypadActivity.generateMatrix(i % KeypadActivity.LARGO_KEY, KeypadActivity.salt);
+            char[] matrix = KeypadActivity.generateMatrix(i % KeypadActivity.LARGO_KEY, KeypadActivity.seed);
             for (char letra: matrix) {
                 ocurrencias[cosa.indexOf(letra + "")]++;
             }
         }
+        return ocurrencias;
+    }
+
+    public double standardDeviation(int[] numbers){
+        double average = average(numbers);
+        double sd = 0;
+        for (int i=0; i<numbers.length;i++) {
+            sd += ((numbers[i] - average)*(numbers[i] - average)) / (numbers.length - 1);
+        }
+        return Math.sqrt(sd);
+    }
+
+    public double average(int[] numbers){
+        int sum = 0;
+        for(int i=0; i<numbers.length; i++)
+        {
+            sum = sum + numbers[i];
+        }
+        return sum / numbers.length;
     }
 
 

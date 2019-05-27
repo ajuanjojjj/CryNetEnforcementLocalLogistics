@@ -24,7 +24,8 @@ public class KeypadActivity extends AppCompatActivity implements NfcAdapter.Crea
     private static final String TEXT_PLAIN = "text/plain";   //NON-NLS
 
     private final Button[] botones = new Button[20];
-    public static final byte salt = (byte) 136; //TODO Pruebas sobre aleatoriedad en matrix
+    public static final int SALT_INICIAL = 519841561;
+    public int seed = 136;
     private int pos = 0;
 
     private char[] typedValues;
@@ -61,7 +62,7 @@ public class KeypadActivity extends AppCompatActivity implements NfcAdapter.Crea
     }
 
     private void fillButtons() {
-        char[] matrix = generateMatrix(pos, salt);
+        char[] matrix = generateMatrix();
         Tag[] tags = new Tag[botones.length];
 
         for (int i = 0; i < tags.length; i++) {
@@ -87,23 +88,26 @@ public class KeypadActivity extends AppCompatActivity implements NfcAdapter.Crea
         typedChars[pos] = tag.getRepresent();
         typedValues[pos] = tag.getValue();
 
+        for (int w = 0; w < typedValues[pos]; w++)
+            randomLong();
+
         view.setText(generateLabel(typedChars));
 
         pos++;
-        //salt = (byte) (salt ^ pos);
+        //seed = (byte) (seed ^ pos);
         if (pos >= LARGO_KEY) {
             Toast.makeText(this, String.format("Secuence= %s\nPresses= %s", new String(typedChars), new String(typedValues)), Toast.LENGTH_LONG).show();
             typedChars = new char[LARGO_KEY];
             typedValues = new char[LARGO_KEY];
             pos = 0;
+            seed = SALT_INICIAL;
             view.setText(generateLabel(typedChars));
         }
 
         fillButtons();
     }
 
-    public static char[] generateMatrix(int pos, int salt) {
-        int seed = Math.abs(salt ^ pos);
+    public char[] generateMatrix() {
         char[] matriz = new char[20];
 
         Stack<Character> pilaLetter = new Stack<>();
@@ -115,11 +119,11 @@ public class KeypadActivity extends AppCompatActivity implements NfcAdapter.Crea
             pilaNumber.add(character);
 
         for (int i = 0; i < 16; i++) {
-            matriz[i] = pilaLetter.remove( randomLong(seed) % pilaLetter.size());
+            matriz[i] = pilaLetter.remove( (randomLong()) % pilaLetter.size());
         }
 
         for (int i = 16; i < 20; i++) {
-            matriz[i] = pilaNumber.remove( randomLong(seed) % pilaNumber.size());
+            matriz[i] = pilaNumber.remove(randomLong() % pilaNumber.size());
         }
 
         return matriz;
@@ -136,7 +140,7 @@ public class KeypadActivity extends AppCompatActivity implements NfcAdapter.Crea
         return builder.toString();
     }
 
-    public static int randomLong(int seed) {
+    public int randomLong() {
         seed ^= (seed << 21);
         seed ^= (seed >>> 35);
         seed ^= (seed << 4);
