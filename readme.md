@@ -33,7 +33,7 @@ This work is licensed under a [Creative Commons Attribution-NoDerivatives 4.0 In
 |Pruebas		|	Probar navegacion y uso con usuarios			|	-	|	Pendiente	|	-		|	-	|
 |Pruebas		|	Desplegar en diferentes sistemas para testear	|	-	|	Pendiente	|	-		|	-	|
 
-\*Nota 27/5/2019: Tras lo que esta demostrando ser un pozo sin fondo de trabajo, la implementacion del algoritmo será una que no pasa los algoritmos de prueba en lo que a aleatoriedad se refiere, quedando con una dispersion relativamente alta.
+\*Nota 27/5/2019: Tras lo que esta demostrando ser un pozo sin fondo de trabajo, la implementacion del algoritmo será una que no pasa las baterias de prueba en lo que a aleatoriedad se refiere, lo que resulta en mayores posibilidades de que aparezcan unos numeros u otros.
 
 ## Diagramas UML
 ![Imagen del diagrama de Entidad Relacion](/uml/EntidadRelacion.png?raw=true)
