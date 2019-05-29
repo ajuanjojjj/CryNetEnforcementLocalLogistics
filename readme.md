@@ -13,7 +13,7 @@ This work is licensed under a [Creative Commons Attribution-NoDerivatives 4.0 In
 |Desarrollo		|	Implementar sub-vista Task						|	1	|	Terminada	|	1		|	0.5	|
 |Desarrollo		|	Implementar vista email en detalle				|	2	|	Terminada	|	1		|	2	|
 |Desarrollo		|	Implementar vista Map							|	4	|	Terminada	|	3		|	3	|
-|Desarrollo		|	Implementar vista Empleados						|	8	|	Pendiente	|	3		|	9	|
+|Desarrollo		|	Implementar vista Empleados						|	8	|	Pendiente	|	3		|	10	|
 |Desarrollo		|	Implementar vista Keypad						|	6	|	Terminada	|	1		|	9	|
 |Desarrollo		|	Implementar vista Almacen						|	-	|	Pendiente	|	-		|	-	|
 |Desarrollo		|	Implementar vista Reporte						|	-	|	Pendiente	|	-		|	-	|
