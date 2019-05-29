@@ -1,13 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
-<FrameLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:paddingLeft="15dp"
     android:paddingRight="15dp"
     android:paddingTop="10dp"
-    style="@style/CrynetContainer"
-    >
+    style="@style/CrynetContainer">
 
     <ScrollView
         android:layout_width="match_parent"
@@ -21,6 +18,7 @@
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                style="@style/CrynetTitle"
                 android:gravity="fill_vertical"
                 android:orientation="horizontal">
 
@@ -56,6 +54,7 @@
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
+                style="@style/CrynetSubcontainer"
                 android:orientation="horizontal">
 
                 <LinearLayout

@@ -14,6 +14,7 @@ import java.util.List;
 /**
  * Global Policy Updates
  */
+@SuppressWarnings("ALL")
 class GPU {
     private static final String GPUS = "GPUs";        //NON-NLS
     private static final String GPU = "GPU";        //NON-NLS

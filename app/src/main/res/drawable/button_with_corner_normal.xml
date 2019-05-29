@@ -5,8 +5,7 @@
         android:right ="3dp"
         android:top   ="3dp"
         android:bottom="3dp">
-        <shape xmlns:android="http://schemas.android.com/apk/res/android"
-            android:shape="rectangle">
+        <shape android:shape="rectangle">
             <solid android:color="@color/crynetBrightBlue" />
             <stroke android:width="5px" android:color="@color/crynetBrighterBlue" />
         </shape>

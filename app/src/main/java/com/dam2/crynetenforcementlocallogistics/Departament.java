@@ -1,8 +1,16 @@
 package com.dam2.crynetenforcementlocallogistics;
 
+import android.util.JsonReader;
+
+import java.io.IOException;
 import java.io.Serializable;
 
 public class Departament implements Serializable {
+    private static final String DEPT_ID = "id";
+    private static final String DEPT_NAME = "name";
+    private static final String DEPT_DESC = "description";
+    private static final String DEPT_PHOTO = "photo";
+
     private int id;
     private String name;
     private String description;
@@ -12,7 +20,7 @@ public class Departament implements Serializable {
         return id;
     }
 
-    public void setId(int id) {
+    private void setId(int id) {
         this.id = id;
     }
 
@@ -20,7 +28,7 @@ public class Departament implements Serializable {
         return name;
     }
 
-    public void setName(String name) {
+    private void setName(String name) {
         this.name = name;
     }
 
@@ -28,7 +36,7 @@ public class Departament implements Serializable {
         return description;
     }
 
-    public void setDescription(String description) {
+    private void setDescription(String description) {
         this.description = description;
     }
 
@@ -36,7 +44,33 @@ public class Departament implements Serializable {
         return photo;
     }
 
-    public void setPhoto(SerializableBitmap photo) {
+    private void setPhoto(SerializableBitmap photo) {
         this.photo = photo;
+    }
+
+    public static Departament parseJson(JsonReader json) {
+        Departament dept = new Departament();
+        try {
+            while(json.hasNext()){
+                switch (json.nextName()) {
+                    case DEPT_ID:
+                        dept.setId(json.nextInt());
+                        break;
+                    case DEPT_NAME:
+                        dept.setName(json.nextString());
+                        break;
+                    case DEPT_DESC:
+                        dept.setDescription(json.nextString());
+                        break;
+                    case DEPT_PHOTO:
+                        String photo = json.nextString();
+                        dept.setPhoto(SerializableBitmap.parseBase64(photo));
+                        break;
+                }
+            }
+            return dept;
+        } catch (IOException ex){
+            return null;
+        }
     }
 }

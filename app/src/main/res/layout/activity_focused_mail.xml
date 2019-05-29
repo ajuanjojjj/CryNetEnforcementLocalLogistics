@@ -6,146 +6,151 @@
     style="@style/CrynetContainer">
 
     <TextView
-        android:id="@+id/lbl_header3"
+        android:id="@+id/lbl_header"
         style="@style/crynetField.Mail.Header"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
         android:padding="3dp"
         android:text="@string/main_Title"
-        android:textSize="30sp" />
-
-    <TextView
-        android:id="@+id/txt_subject"
-        style="@style/crynetField.Mail"
-        android:text="@string/tempTextShort"
-        android:textAlignment="viewStart"
-        android:textSize="24sp" />
-
-    <View
-        android:layout_width="match_parent"
-        android:layout_marginTop="10dp"
-        android:layout_marginBottom="10dp"
-        android:layout_height="1dp"
-        android:background="?android:attr/listDivider" />
+        android:textSize="40sp" />
 
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginBottom="10dp"
-        android:orientation="horizontal">
+        android:layout_height="match_parent"
+        style="@style/CrynetSubcontainer"
+        android:orientation="vertical">
 
-        <ImageView
-            android:id="@+id/img_icono_perfil"
-            android:layout_width="64dp"
-            android:layout_height="match_parent"
-            android:layout_margin="3dp"
-            android:layout_weight="0"
-            android:contentDescription="@string/iconoRemitenteDesc"
-            tools:srcCompat="@tools:sample/avatars[0]" />
+        <TextView
+            android:id="@+id/txt_title"
+            style="@style/crynetField.Mail"
+            android:text="@string/tempTextShort"
+            android:textAlignment="viewStart"
+            android:textSize="24sp" />
 
-        <LinearLayout
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:orientation="vertical">
-
-            <TextView
-                android:id="@+id/txt_sender"
-                style="@style/crynetField.Mail.Mail"
-                android:text="@string/tempTextShort"
-                android:textSize="18sp" />
-
-            <TextView
-                android:id="@+id/txt_reciever"
-                style="@style/crynetField.Mail.Mail"
-                android:text="@string/lblPara"
-                android:textSize="12sp" />
-
-            <TextView
-                android:id="@+id/txt_date"
-                style="@style/crynetField.Mail.Mail"
-                android:text="@string/lblButtonVerDetalles"
-                android:textSize="12sp" />
-        </LinearLayout>
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:layout_marginTop="10dp"
+            android:layout_marginBottom="10dp"
+            android:background="?android:attr/listDivider" />
 
         <LinearLayout
-            android:layout_width="wrap_content"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:layout_marginBottom="10dp"
             android:orientation="horizontal">
 
-            <Button
-                android:id="@+id/button7"
-                android:layout_width="40dp"
-                android:layout_height="40dp"
-                android:layout_weight="1"
-                tools:ignore="ButtonStyle" />
+            <ImageView
+                android:id="@+id/img_icono_perfil"
+                android:layout_width="64dp"
+                android:layout_height="match_parent"
+                android:layout_margin="3dp"
+                android:layout_weight="0"
+                android:contentDescription="@string/iconoRemitenteDesc"
+                tools:srcCompat="@tools:sample/avatars[0]" />
 
-            <Button
-                android:id="@+id/button8"
-                android:layout_width="40dp"
-                android:layout_height="40dp"
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
                 android:layout_weight="1"
-                tools:ignore="ButtonStyle" />
+                android:orientation="vertical">
+
+                <TextView
+                    android:id="@+id/txt_sender"
+                    style="@style/crynetField.Mail.Mail"
+                    android:text="@string/tempTextShort"
+                    android:textSize="18sp" />
+
+                <TextView
+                    android:id="@+id/txt_reciever"
+                    style="@style/crynetField.Mail.Mail"
+                    android:text="@string/lblPara"
+                    android:textSize="12sp" />
+
+                <TextView
+                    android:id="@+id/txt_date"
+                    style="@style/crynetField.Mail.Mail"
+                    android:text="@string/lblButtonVerDetalles"
+                    android:textSize="12sp" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <Button
+                    android:id="@+id/button7"
+                    android:layout_width="40dp"
+                    android:layout_height="40dp"
+                    android:layout_weight="1"
+                    tools:ignore="ButtonStyle" />
+
+                <Button
+                    android:id="@+id/button8"
+                    android:layout_width="40dp"
+                    android:layout_height="40dp"
+                    android:layout_weight="1"
+                    tools:ignore="ButtonStyle" />
+            </LinearLayout>
+
         </LinearLayout>
 
-    </LinearLayout>
-
-    <ScrollView
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content">
-
-        <FrameLayout
+        <ScrollView
             android:layout_width="match_parent"
             android:layout_height="wrap_content">
 
-            <TextView
-                android:id="@+id/txt_body"
-                style="@style/crynetField.Mail.Mail"
-                android:text="@string/tempTextShort" />
-        </FrameLayout>
-    </ScrollView>
+            <FrameLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
 
-    <View
-        android:id="@+id/divider2"
-        android:layout_width="match_parent"
-        android:layout_height="1dp"
-        android:layout_marginTop="10dp"
-        android:layout_marginBottom="10dp"
-        android:background="?android:attr/listDivider" />
+                <TextView
+                    android:id="@+id/txt_body"
+                    style="@style/crynetField.Mail.Mail"
+                    android:text="@string/tempTextShort" />
+            </FrameLayout>
+        </ScrollView>
 
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:gravity="center"
-        android:orientation="vertical">
+        <View
+            android:id="@+id/divider2"
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:layout_marginTop="10dp"
+            android:layout_marginBottom="10dp"
+            android:background="?android:attr/listDivider" />
 
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:orientation="horizontal">
+            android:gravity="center"
+            android:orientation="vertical">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <Button
+                    android:id="@+id/button9"
+                    style="@style/crynetButton"
+                    android:layout_width="100dp"
+                    android:text="@string/btnResponder" />
+
+
+                <Button
+                    android:id="@+id/button11"
+                    style="@style/crynetButton"
+                    android:layout_width="100dp"
+                    android:text="@string/btnReenviar" />
+            </LinearLayout>
 
             <Button
-                android:id="@+id/button9"
+                android:id="@+id/button10"
                 style="@style/crynetButton"
-                android:layout_width="100dp"
-                android:text="@string/btnResponder" />
-
-
-            <Button
-                android:id="@+id/button11"
-                style="@style/crynetButton"
-                android:layout_width="100dp"
-                android:text="@string/btnReenviar" />
+                android:layout_width="200dp"
+                android:layout_marginTop="10dp"
+                android:paddingStart="5dp"
+                android:paddingEnd="5dp"
+                android:text="@string/btnResponderTodos" />
         </LinearLayout>
-
-        <Button
-            android:id="@+id/button10"
-            style="@style/crynetButton"
-            android:layout_width="200dp"
-            android:layout_marginTop="10dp"
-            android:paddingStart="5dp"
-            android:paddingEnd="5dp"
-            android:text="@string/btnResponderTodos" />
     </LinearLayout>
 
 </LinearLayout>

@@ -3,7 +3,6 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     style="@style/CrynetContainer"
-    android:padding="0dp"
     android:orientation="vertical">
 
     <TextView

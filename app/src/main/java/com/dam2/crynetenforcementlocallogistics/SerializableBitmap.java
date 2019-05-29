@@ -9,10 +9,10 @@ import java.io.IOException;
 import java.io.Serializable;
 
 class SerializableBitmap implements Serializable {
-    private final Bitmap mapa;
+    private Bitmap bitmap;
 
     public SerializableBitmap(Bitmap mapa) {
-        this.mapa = mapa;
+        this.bitmap = mapa;
     }
 
     public static SerializableBitmap parseBase64(String photo) {
@@ -22,39 +22,26 @@ class SerializableBitmap implements Serializable {
     }
 
     public Bitmap getMapa() {
-        return mapa;
+        return bitmap;
     }
 
+
+    // Converts the Bitmap into a byte array for serialization
     private void writeObject(java.io.ObjectOutputStream out) throws IOException {
-
-        ByteArrayOutputStream stream = new ByteArrayOutputStream();
-        mapa.compress(Bitmap.CompressFormat.PNG, 100, stream);
-
-        byte[] byteArray = stream.toByteArray();
-
-        out.writeInt(byteArray.length);
-        out.write(byteArray);
-
+        ByteArrayOutputStream byteStream = new ByteArrayOutputStream();
+        bitmap.compress(Bitmap.CompressFormat.PNG, 0, byteStream);
+        byte[] bitmapBytes = byteStream.toByteArray();
+        out.write(bitmapBytes, 0, bitmapBytes.length);
     }
 
-    private SerializableBitmap readObject(java.io.ObjectInputStream in) throws IOException {
-        int bufferLength = in.readInt();
-
-        byte[] byteArray = new byte[bufferLength];
-
-        int pos = 0;
-        do {
-            int read = in.read(byteArray, pos, bufferLength - pos);
-
-            if (read != -1) {
-                pos += read;
-            } else {
-                break;
-            }
-
-        } while (pos < bufferLength);
-
-        return new SerializableBitmap(BitmapFactory.decodeByteArray(byteArray, 0, bufferLength));
-
+    // Deserializes a byte array representing the Bitmap and decodes it
+    private void readObject(java.io.ObjectInputStream in) throws IOException {
+        ByteArrayOutputStream byteStream = new ByteArrayOutputStream();
+        int b;
+        while((b = in.read()) != -1)
+            byteStream.write(b);
+        byte[] bitmapBytes = byteStream.toByteArray();
+        bitmap = BitmapFactory.decodeByteArray(bitmapBytes, 0, bitmapBytes.length);
     }
 }
+

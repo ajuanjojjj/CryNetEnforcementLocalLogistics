@@ -81,7 +81,7 @@ public class KeypadActivity extends AppCompatActivity implements NfcAdapter.Crea
 
     }
 
-    protected void pulsarBoton(View v) {
+    public void pulsarBoton(View v) {
         Tag tag = (Tag) v.getTag();
         TextView view = findViewById(R.id.txt_typedKey);
 
@@ -89,12 +89,12 @@ public class KeypadActivity extends AppCompatActivity implements NfcAdapter.Crea
         typedValues[pos] = tag.getValue();
 
         for (int w = 0; w < typedValues[pos]; w++)
-            randomLong();
+            randomInt();
 
         view.setText(generateLabel(typedChars));
 
         pos++;
-        //seed = (byte) (seed ^ pos);
+
         if (pos >= LARGO_KEY) {
             Toast.makeText(this, String.format("Secuence= %s\nPresses= %s", new String(typedChars), new String(typedValues)), Toast.LENGTH_LONG).show();
             typedChars = new char[LARGO_KEY];
@@ -119,17 +119,17 @@ public class KeypadActivity extends AppCompatActivity implements NfcAdapter.Crea
             pilaNumber.add(character);
 
         for (int i = 0; i < 16; i++) {
-            matriz[i] = pilaLetter.remove( (randomLong()) % pilaLetter.size());
+            matriz[i] = pilaLetter.remove( (randomInt()) % pilaLetter.size());
         }
 
         for (int i = 16; i < 20; i++) {
-            matriz[i] = pilaNumber.remove(randomLong() % pilaNumber.size());
+            matriz[i] = pilaNumber.remove(randomInt() % pilaNumber.size());
         }
 
         return matriz;
     }
 
-    public static String generateLabel(char[] typedChars) {
+    private static String generateLabel(char[] typedChars) {
         StringBuilder builder = new StringBuilder();
         for (int i = 0; i < typedChars.length; i++) {
             char typedChar = typedChars[i];
@@ -140,9 +140,9 @@ public class KeypadActivity extends AppCompatActivity implements NfcAdapter.Crea
         return builder.toString();
     }
 
-    public int randomLong() {
+    public int randomInt() {
         seed ^= (seed << 21);
-        seed ^= (seed >>> 35);
+        seed ^= (seed >>> 17);
         seed ^= (seed << 4);
         return Math.abs(seed);
     }
@@ -166,19 +166,19 @@ public class KeypadActivity extends AppCompatActivity implements NfcAdapter.Crea
             return this.represent - compareRepresent;
         }
 
-        public char getRepresent() {
+        char getRepresent() {
             return represent;
         }
 
-        public void setRepresent(char represent) {
+        void setRepresent(char represent) {
             this.represent = represent;
         }
 
-        public char getValue() {
+        char getValue() {
             return value;
         }
 
-        public void setValue(int value) {
+        void setValue(int value) {
             this.value = Integer.toString(value, 20).charAt(0);
         }
 

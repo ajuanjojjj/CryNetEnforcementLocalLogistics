@@ -8,6 +8,7 @@ import org.junit.Test;
 import org.junit.runner.RunWith;
 
 import java.util.Random;
+import java.util.concurrent.ThreadLocalRandom;
 
 import static org.junit.Assert.*;
 
@@ -28,9 +29,9 @@ public class ExampleInstrumentedTest {
 
     @Test
     public void isMatrixGood(){
-        boolean meSirve;
-        int sample = 9999999;
-        int[] result = countMatrixOcurrences(sample);
+        int sample = 300000;
+
+        long[] result = countMatrixOcurrences(sample);
         double deviation = standardDeviation(result);
 
         assertTrue(deviation < 10);
@@ -45,38 +46,48 @@ public class ExampleInstrumentedTest {
 
     }
 
-    public int[] countMatrixOcurrences(int sample){
+    public long[] countMatrixOcurrences(int sample) {
         String cosa = KeypadActivity.LETTERS + KeypadActivity.NUMBERS;
 
-        int[] ocurrencias = new int[cosa.length()];
+        long[] ocurrencias = new long[cosa.length()];
 
-        for (int i = 0; i < cosa.length(); i++){
-            ocurrencias[i] = cosa.charAt(i);
-        }
+        KeypadActivity actividad = new KeypadActivity();
 
-        for (int i = 0; i < sample; i++) {
-            char[] matrix = KeypadActivity.generateMatrix(i % KeypadActivity.LARGO_KEY, KeypadActivity.seed);
-            for (char letra: matrix) {
-                ocurrencias[cosa.indexOf(letra + "")]++;
+        for (int k = 0; k < sample; k++) {
+            for (int i = 0; i < KeypadActivity.LARGO_KEY; i++) {
+
+                char[] matrix = actividad.generateMatrix();
+
+                int pulsada = ThreadLocalRandom.current().nextInt(19); //Tecla a pulsar, me da lo mismo cual
+
+                for (int j = 0; j < matrix.length; j++) {
+                    char letra = matrix[j];
+                    int pos = cosa.indexOf(letra);
+                    if (j == pulsada) {
+                        for (int w = 0; w < pulsada; w++)
+                            actividad.randomInt();
+                    }
+                    ocurrencias[pos]++;
+                }
             }
+            actividad.seed = KeypadActivity.SALT_INICIAL;
         }
         return ocurrencias;
     }
 
-    public double standardDeviation(int[] numbers){
+    public double standardDeviation(long[] numbers){
         double average = average(numbers);
         double sd = 0;
-        for (int i=0; i<numbers.length;i++) {
-            sd += ((numbers[i] - average)*(numbers[i] - average)) / (numbers.length - 1);
+        for (long number : numbers) {
+            sd += ((number - average) * (number - average)) / (numbers.length - 1);
         }
         return Math.sqrt(sd);
     }
 
-    public double average(int[] numbers){
-        int sum = 0;
-        for(int i=0; i<numbers.length; i++)
-        {
-            sum = sum + numbers[i];
+    public double average(long[] numbers){
+        double sum = 0;
+        for (long number : numbers) {
+            sum = sum + number;
         }
         return sum / numbers.length;
     }

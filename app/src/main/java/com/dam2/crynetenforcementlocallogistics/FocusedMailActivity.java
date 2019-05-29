@@ -18,7 +18,9 @@ public class FocusedMailActivity extends AppCompatActivity {
 
         setContentView(R.layout.activity_focused_mail);
 
-        Mail mail =  (Mail) extras.getSerializable(MAIL);
+        Mail mail = (Mail) Objects.requireNonNull(extras).getSerializable(MAIL);
+
+        Objects.requireNonNull(mail, "Mail era null al sacarlo del bundle");
 
         ImageView imagen = findViewById(R.id.img_icono_perfil);
         imagen.setImageBitmap(mail.getRemitente().getIcono());
@@ -27,7 +29,7 @@ public class FocusedMailActivity extends AppCompatActivity {
         String sender = mail.getRemitente().getUsername() + " (" + mail.getRemitente().getMail() + ")";
         txt_sender.setText(sender);
 
-        TextView txt_subject = findViewById(R.id.txt_subject);
+        TextView txt_subject = findViewById(R.id.txt_title);
         txt_subject.setText(mail.getSubject());
 
         TextView txt_body = findViewById(R.id.txt_body);

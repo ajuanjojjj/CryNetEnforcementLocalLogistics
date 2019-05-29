@@ -1,4 +1,4 @@
-<resources xmlns:tools="http://schemas.android.com/tools">
+<resources>
     <string name="app_name">CryNet Enforcement &amp; Local Logistics</string>
     <string name="main_Title">CRYNET SYSTEMS</string>
     <string name="prompt_email">Email</string>
@@ -37,6 +37,13 @@
     <string name="main_wharehouse">Almacen</string>
     <string name="main_map">Map</string>
     <string name="main_keys">Keys</string>
+    <string name="report_title">Send a Report to HQ</string>
+    <string name="report_explain">Please explain concisely and precisely the report cause</string>
+    <string name="report_write_here">Please write here the report</string>
+    <string name="report_select">Select from this list the direct threat it presents</string>
+    <string name="report_send">Send report</string>
+    <string name="report_sanction">Keep in mind that sending invalid reports can result in sanctions</string>
+    <string name="report_sent_info">Current location and user token are sent automatically   </string>
     <!-- No traducir, queda mejor así-->
     <string name="btnMailInbox">INBOX</string>
     <string name="btnMailSent">SENT</string>
@@ -45,4 +52,13 @@
     <string name="btnMailMailDesc">Write Mail</string>
     <!-- No traducir, queda mejor así-->
 
+    <string-array name="spnThreat">
+        <item>BLANK</item>
+        <item>GREEN</item>
+        <item>BLUE</item>
+        <item>AMBER</item>
+        <item>RED</item>
+        <item>BLACK</item>
+        <item>COLDSILVER</item>
+    </string-array>
 </resources>
