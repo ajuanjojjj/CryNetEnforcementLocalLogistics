@@ -18,15 +18,15 @@ This work is licensed under a [Creative Commons Attribution-NoDerivatives 4.0 In
 |Desarrollo		|	Implementar vista Almacen						|	-	|	Pendiente	|	-		|	-	|
 |Desarrollo		|	Implementar vista Reporte						|	6	|	En proceso	|	4		|	3	|
 |Desarrollo		|	Mejorar la navegacion de la lista de personal	|	-	|	Pendiente	|	-		|	-	|
-|Desarrollo		|	Poner en funcionamiento la vista E-mail			|	-	|	Pendiente	|	-		|	-	|
+|Desarrollo		|	Poner en funcionamiento la vista E-mail			|	-	|	Pendiente	|	-		|	0.5	|
 |Desarrollo		|	Arreglar la vista mapas							|	-	|	Pendiente	|	-		|	-	|
 |Desarrollo		|	Crear algoritmo de conversion de claves			|	2	|	Terminado\*	|	3		|	7	|
 |Implementacion	|	Preparar hosting para servicios web				|	2	|	Pendiente	|	3		|	5	|
-|Documentacion	|	Crear diagrama de clases						|	3	|	Por revisar	|	1		|	5.3	|
-|Documentacion	|	Crear diagrama de actividades					|	3	|	Por revisar	|	~1~ 2	|	1.5	|
-|Documentacion	|	Crear diagrama de despligue						|	1	|	Por revisar	|	1		|	1	|
-|Documentacion	|	Crear diagrama de casos de uso					|	2	|	Por revisar	|	1		|	1.5	|
-|Documentacion	|	Crear diagrama Entidad-Relacion					|	0.1	|	Terminado	|	2		|	0.2	|
+|Documentacion	|	Crear diagrama de clases						|	3	|	Actualizar	|	1		|	5.3	|
+|Documentacion	|	Crear diagrama de actividades					|	3	|	Actualizar	|	~1~ 2	|	1.5	|
+|Documentacion	|	Crear diagrama de despligue						|	1	|	Actualizar	|	1		|	1	|
+|Documentacion	|	Crear diagrama de casos de uso					|	2	|	Actualizar	|	1		|	1.5	|
+|Documentacion	|	Crear diagrama Entidad-Relacion					|	0.1	|	Actualizar	|	2		|	0.2	|
 |Documentacion	|	Crear memoria de proyecto						|	-	|	Pendiente	|	-		|	-	|
 |Documentacion	|	Documentar metodología ágil						|	-	|	Pendiente	|	-		|	-	|
 |Pruebas		|	Crear batería de pruebas para algoritmo claves	|	-	|	Pendiente	|	-		|	2.5	|
