@@ -16,7 +16,7 @@ This work is licensed under a [Creative Commons Attribution-NoDerivatives 4.0 In
 |Desarrollo		|	Implementar vista Empleados						|	8	|	Pendiente	|	3		|	10	|
 |Desarrollo		|	Implementar vista Keypad						|	6	|	Terminada	|	1		|	9	|
 |Desarrollo		|	Implementar vista Almacen						|	-	|	Pendiente	|	-		|	-	|
-|Desarrollo		|	Implementar vista Reporte						|	-	|	Pendiente	|	-		|	-	|
+|Desarrollo		|	Implementar vista Reporte						|	6	|	En proceso	|	4		|	3	|
 |Desarrollo		|	Mejorar la navegacion de la lista de personal	|	-	|	Pendiente	|	-		|	-	|
 |Desarrollo		|	Poner en funcionamiento la vista E-mail			|	-	|	Pendiente	|	-		|	-	|
 |Desarrollo		|	Arreglar la vista mapas							|	-	|	Pendiente	|	-		|	-	|
