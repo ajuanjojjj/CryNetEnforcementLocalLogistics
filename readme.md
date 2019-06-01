@@ -21,7 +21,7 @@ This work is licensed under a [Creative Commons Attribution-NoDerivatives 4.0 In
 |Desarrollo		|	Poner en funcionamiento la vista E-mail			|	-	|	Pendiente	|	-		|	0.5	|
 |Desarrollo		|	Arreglar la vista mapas							|	-	|	Pendiente	|	-		|	-	|
 |Desarrollo		|	Crear algoritmo de conversion de claves			|	2	|	Terminado\*	|	3		|	7	|
-|Implementacion	|	Preparar hosting para servicios web				|	2	|	Pendiente	|	3		|	5	|
+|Implementacion	|	Preparar hosting para servicios web				|	2	|	Pendiente	|	3		|	7.5	|
 |Documentacion	|	Crear diagrama de clases						|	3	|	Actualizar	|	1		|	5.3	|
 |Documentacion	|	Crear diagrama de actividades					|	3	|	Actualizar	|	~1~ 2	|	1.5	|
 |Documentacion	|	Crear diagrama de despligue						|	1	|	Actualizar	|	1		|	1	|
