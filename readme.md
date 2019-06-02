@@ -18,7 +18,7 @@ This work is licensed under a [Creative Commons Attribution-NoDerivatives 4.0 In
 |Desarrollo		|	Implementar vista Almacen						|	-	|	Pendiente	|	-		|	-	|
 |Desarrollo		|	Implementar vista Reporte						|	6	|	En proceso	|	4		|	3	|
 |Desarrollo		|	Mejorar la navegacion de la lista de personal	|	-	|	Pendiente	|	-		|	-	|
-|Desarrollo		|	Poner en funcionamiento la vista E-mail			|	-	|	Pendiente	|	-		|	0.5	|
+|Desarrollo		|	Poner en funcionamiento la vista E-mail			|	-	|	En proceso	|	-		|	2.5	|
 |Desarrollo		|	Arreglar la vista mapas							|	-	|	Pendiente	|	-		|	-	|
 |Desarrollo		|	Crear algoritmo de conversion de claves			|	2	|	Terminado\*	|	3		|	7	|
 |Implementacion	|	Preparar hosting para servicios web				|	2	|	Pendiente	|	3		|	7.5	|
