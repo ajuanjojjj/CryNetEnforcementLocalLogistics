@@ -8,7 +8,7 @@
     <string name="login_image_logo">Crynet Logo</string>
     <string name="error_invalid_email">This email address is invalid</string>
     <string name="error_invalid_password">This password is too short</string>
-    <string name="error_incorrect_password">This password is incorrect</string>
+    <string name="error_incorrect_login">The email or the password is not valid.</string>
     <string name="error_field_required">This field is required</string>
     <string name="GPUName">Global Policy Update</string>
     <string name="GPUActivated">A new Global Policy Update now in effect, click for more info.</string>

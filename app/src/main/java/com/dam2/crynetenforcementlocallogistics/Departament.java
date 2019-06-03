@@ -8,13 +8,13 @@ import java.io.Serializable;
 public class Departament implements Serializable {
     private static final String DEPT_ID = "id";
     private static final String DEPT_NAME = "name";
-    private static final String DEPT_DESC = "description";
-    private static final String DEPT_PHOTO = "photo";
+    private static final String DEPT_DESC = "info";
+    private static final String DEPT_PHOTO = "icon";
 
     private int id;
     private String name;
     private String description;
-    private SerializableBitmap photo;
+    private int iconId;
 
     public int getId() {
         return id;
@@ -40,12 +40,12 @@ public class Departament implements Serializable {
         this.description = description;
     }
 
-    public SerializableBitmap getPhoto() {
-        return photo;
+    public int getIconId() {
+        return iconId;
     }
 
-    private void setPhoto(SerializableBitmap photo) {
-        this.photo = photo;
+    private void setIconId(int iconId) {
+        this.iconId = iconId;
     }
 
     public static Departament parseJson(JsonReader json) {
@@ -63,8 +63,7 @@ public class Departament implements Serializable {
                         dept.setDescription(json.nextString());
                         break;
                     case DEPT_PHOTO:
-                        String photo = json.nextString();
-                        dept.setPhoto(SerializableBitmap.parseBase64(photo));
+                        dept.setIconId(json.nextInt());
                         break;
                 }
             }

@@ -24,7 +24,7 @@ public class MapActivity extends AppCompatActivity implements OnMapReadyCallback
             mapViewBundle = savedInstanceState.getBundle(MAP_VIEW_BUNDLE_KEY);
         }
 
-        mapView = findViewById(R.id.mapView3);
+        mapView = findViewById(R.id.mapView);
         mapView.onCreate(mapViewBundle);
         mapView.getMapAsync(this);
     }

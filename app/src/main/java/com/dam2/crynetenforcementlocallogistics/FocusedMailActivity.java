@@ -23,10 +23,10 @@ public class FocusedMailActivity extends AppCompatActivity {
         Objects.requireNonNull(mail, "Mail era null al sacarlo del bundle");
 
         ImageView imagen = findViewById(R.id.img_icono_perfil);
-        imagen.setImageBitmap(mail.getRemitente().getIcono());
+        new Employee.DownloadImageTask(imagen).execute(mail.getSender().getPhoto());
 
         TextView txt_sender = findViewById(R.id.txt_sender);
-        String sender = mail.getRemitente().getUsername() + " (" + mail.getRemitente().getMail() + ")";
+        String sender = mail.getSender().getFistName() + " (" + mail.getSender().getEmail() + ")";
         txt_sender.setText(sender);
 
         TextView txt_subject = findViewById(R.id.txt_title);

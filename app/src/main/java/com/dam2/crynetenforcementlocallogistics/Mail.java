@@ -2,6 +2,7 @@ package com.dam2.crynetenforcementlocallogistics;
 
 import android.content.res.Resources;
 import android.graphics.BitmapFactory;
+import android.util.JsonReader;
 import android.util.Xml;
 
 import org.xmlpull.v1.XmlPullParser;
@@ -16,21 +17,18 @@ import java.util.List;
 
 class Mail implements Serializable {
     //XML
-    private static final String MAILS = "Mails";        //NON-NLS
-    private static final String MAIL = "Mail";          //NON-NLS
-    private static final String BODY = "Body";          //NON-NLS
-    private static final String SUBJECT = "Subject";    //NON-NLS
+    private static final String MAIL_ID = "id";                 //NON-NLS
+    private static final String MAIL_SUBJECT = "subject";       //NON-NLS
+        private static final String MAIL_BODY = "body";         //NON-NLS
+    private static final String MAIL_SENDER = "sender";         //NON-NLS
+    private static final String MAIL_RECIEVER = "reciever";     //NON-NLS
 
-    private static final String ns = null;
-    private static final String LOCKHART_CRYNET_NET = "lockhart@crynet.net";
-
+    private int id;
     private String subject;
     private String body;
-    private User remitente;
+    private Employee sender;
+    private Employee reciever;
 
-    public User getRemitente() {
-        return remitente;
-    }
 
     public String getSubject() {
         return subject;
@@ -48,109 +46,57 @@ class Mail implements Serializable {
         this.body = body;
     }
 
-    private void setRemitente(User remitente) {
-        this.remitente = remitente;
+    public Employee getReciever() {
+        return reciever;
     }
 
-    public static List<Mail> parse(InputStream in, Resources res) throws XmlPullParserException, IOException {
+    public void setReciever(Employee reciever) {
+        this.reciever = reciever;
+    }
+
+    public Employee getSender() {
+        return sender;
+    }
+
+    public void setSender(Employee sender) {
+        this.sender = sender;
+    }
+
+    public static Mail parseJson(JsonReader json) {
         try {
-            XmlPullParser parser = Xml.newPullParser();
-            parser.setFeature(XmlPullParser.FEATURE_PROCESS_NAMESPACES, false);
-            parser.setInput(in, "UTF-8");   //NON-NLS
-            parser.nextTag();
-            return readFeed(parser, res);
-        } finally {
-            in.close();
-        }
-    }
-
-    private static List<Mail> readFeed(XmlPullParser parser, Resources res) throws XmlPullParserException, IOException {
-        List<Mail> entries = new ArrayList<>();
-
-        parser.require(XmlPullParser.START_TAG, ns, MAILS);
-        while (parser.next() != XmlPullParser.END_TAG) {
-            if (parser.getEventType() != XmlPullParser.START_TAG) {
-                continue;
+            Mail mail = new Mail();
+            while (json.hasNext()) {
+                String name = json.nextName();
+                switch (name) {
+                    case MAIL_ID:
+                        mail.id = json.nextInt();
+                        break;
+                    case MAIL_SUBJECT:
+                        mail.setSubject(json.nextString());
+                        break;
+                    case MAIL_BODY:
+                        mail.setBody(json.nextString());
+                        break;
+                    case MAIL_SENDER:
+                        json.beginObject();
+                        Employee empl = Employee.parseJson(json);
+                        json.endObject();
+                        mail.setSender(empl);
+                        break;
+                    case MAIL_RECIEVER:
+                        json.beginObject();
+                        Employee emp = Employee.parseJson(json);
+                        json.endObject();
+                        mail.setReciever(emp);
+                        break;
+                    default:
+                        json.skipValue();
+                        break;
+                }
             }
-            String name = parser.getName();
-            // Starts by looking for the entry tag
-            if (name.equals(MAIL)) {
-                entries.add(readMail(parser, res));
-            } else {
-                skip(parser);
-            }
-        }
-        return entries;
-    }
-
-    private static Mail readMail(XmlPullParser parser, Resources res) throws XmlPullParserException, IOException {
-        parser.require(XmlPullParser.START_TAG, ns, MAIL);
-        Mail mail = new Mail();
-
-        while (parser.next() != XmlPullParser.END_TAG) {
-            if (parser.getEventType() != XmlPullParser.START_TAG) {
-                continue;
-            }
-            String name = parser.getName();
-            switch (name) {
-                case SUBJECT:
-                    mail.setSubject(readSubject(parser));
-                    break;
-                case BODY:
-                    mail.setBody(readBody(parser));
-                    break;
-                default:
-                    skip(parser);
-                    break;
-            }
-            User remitente = new User();
-            remitente.setMail(LOCKHART_CRYNET_NET);
-            remitente.setUsername("LockHart"); //NON-NLS
-            remitente.setIcono(BitmapFactory.decodeResource(res, R.drawable.icono_test));
-            mail.setRemitente(remitente);
-        }
-        return mail;
-    }
-    // Processes title tags in the feed.
-    private static String readSubject(XmlPullParser parser) throws IOException, XmlPullParserException {
-        parser.require(XmlPullParser.START_TAG, ns, SUBJECT);
-        String title = readText(parser);
-        parser.require(XmlPullParser.END_TAG, ns, SUBJECT);
-        return title;
-    }
-
-    // Processes title tags in the feed.
-    private static String readBody(XmlPullParser parser) throws IOException, XmlPullParserException {
-        parser.require(XmlPullParser.START_TAG, ns, BODY);
-        String title = readText(parser);
-        parser.require(XmlPullParser.END_TAG, ns, BODY);
-        return title;
-    }
-
-    // For the tags title and summary, extracts their text values.
-    private static String readText(XmlPullParser parser) throws IOException, XmlPullParserException {
-        String result = "";
-        if (parser.next() == XmlPullParser.TEXT) {
-            result = parser.getText();
-            parser.nextTag();
-        }
-        return result;
-    }
-
-    private static void skip(XmlPullParser parser) throws XmlPullParserException, IOException {
-        if (parser.getEventType() != XmlPullParser.START_TAG) {
-            throw new IllegalStateException();
-        }
-        int depth = 1;
-        while (depth != 0) {
-            switch (parser.next()) {
-                case XmlPullParser.END_TAG:
-                    depth--;
-                    break;
-                case XmlPullParser.START_TAG:
-                    depth++;
-                    break;
-            }
+            return mail;
+        } catch (IOException ex) {
+            return null;
         }
     }
 }

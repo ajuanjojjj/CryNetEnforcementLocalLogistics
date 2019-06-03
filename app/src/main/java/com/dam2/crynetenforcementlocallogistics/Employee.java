@@ -1,22 +1,33 @@
 package com.dam2.crynetenforcementlocallogistics;
 
+import android.content.res.Resources;
+import android.graphics.Bitmap;
+import android.graphics.BitmapFactory;
+import android.graphics.drawable.Drawable;
+import android.os.AsyncTask;
 import android.util.JsonReader;
+import android.util.Log;
+import android.widget.ImageView;
 
 import java.io.IOException;
+import java.io.InputStream;
 import java.io.Serializable;
+import java.lang.ref.WeakReference;
+import java.net.URL;
 import java.util.Date;
 
-class Employee implements Serializable {
-    private static final String EMPL_ID = "id"; //NON-NLS
-    private static final String FIRST_NAME = "fistName"; //NON-NLS
-    private static final String LAST_NAME = "lastName"; //NON-NLS
+public class Employee implements Serializable {
+    private static final String ID = "id"; //NON-NLS
+    private static final String EMPL_ID = "identificador"; //NON-NLS
+    private static final String FIRST_NAME = "first_name"; //NON-NLS
+    private static final String LAST_NAME = "last_name"; //NON-NLS
     private static final String EMPL_MAIL = "email"; //NON-NLS
-    private static final String EMPL_DEPT = "dept"; //NON-NLS
+    private static final String EMPL_DEPT = "departament"; //NON-NLS
     private static final String EMPL_RANK = "rank"; //NON-NLS
     private static final String EMPL_PHOTO = "photo"; //NON-NLS
     private static final String CITY = "city"; //NON-NLS
-    private static final String PAY_GRADE = "payGrade"; //NON-NLS
-    private static final String WORK_ZONE = "workZone"; //NON-NLS
+    private static final String PAY_GRADE = "paygrade"; //NON-NLS
+    private static final String WORK_ZONE = "workzone"; //NON-NLS
 
     private String id;
     private String fistName;
@@ -26,13 +37,10 @@ class Employee implements Serializable {
     private String rank;
     private Date birthDate;
     private Date hireDate;
-    private SerializableBitmap photo;
+    private String photo;
     private String city;
     private String payGrade;
     private String workZone;
-
-    private Employee() {
-    }
 
     public String getId() {
         return id;
@@ -98,11 +106,12 @@ class Employee implements Serializable {
         this.hireDate = hireDate;
     }
 
-    public SerializableBitmap getPhoto() {
+
+    public String getPhoto() {
         return photo;
     }
 
-    private void setPhoto(SerializableBitmap photo) {
+    private void setPhoto(String photo) {
         this.photo = photo;
     }
 
@@ -134,7 +143,8 @@ class Employee implements Serializable {
         try {
             Employee e = new Employee();
             while(json.hasNext()){
-                switch (json.nextName()){
+                String name = json.nextName();
+                switch (name){
                     case EMPL_ID:
                         e.setId(json.nextString());
                         break;
@@ -148,7 +158,9 @@ class Employee implements Serializable {
                         e.setEmail(json.nextString());
                         break;
                     case EMPL_DEPT:
+                        json.beginObject();
                         Departament dept = Departament.parseJson(json);
+                        json.endObject();
                         e.setDepartament(dept);
                         break;
                     case EMPL_RANK:
@@ -161,17 +173,55 @@ class Employee implements Serializable {
                         e.setPayGrade(json.nextString());
                         break;
                     case WORK_ZONE:
+                        json.beginObject();
+                        json.skipValue();
+                        json.skipValue();
+                        json.skipValue();
                         e.setWorkZone(json.nextString());
+                        json.endObject();
                         break;
                     case EMPL_PHOTO:
-                        SerializableBitmap foto = SerializableBitmap.parseBase64(json.nextString());
-                        e.setPhoto(foto);
+                        e.setPhoto(json.nextString());
+                        break;
+                    default:
+                        json.skipValue();
                         break;
                 }
             }
             return e;
         } catch (IOException ex) {
             return null;
+        }
+    }
+
+    public static class DownloadImageTask extends AsyncTask<String, Void, Bitmap> {
+        private WeakReference<ImageView> bmImage;
+
+        DownloadImageTask(ImageView bmImage) {
+            this.bmImage = new WeakReference<>(bmImage);
+        }
+
+        protected Bitmap doInBackground(String... urls) {
+            String urldisplay = urls[0];
+            try {
+                InputStream in = new java.net.URL(urldisplay).openStream();
+                return BitmapFactory.decodeStream(in);
+            } catch (Exception e) {
+                return null;
+            }
+        }
+
+        protected void onPostExecute(Bitmap result) {
+            if (bmImage!=null){
+                if (result == null){
+                    Resources res = bmImage.get().getResources();
+                    Drawable drawable = res.getDrawable(R.drawable.no_image);
+                    bmImage.get().setImageDrawable(drawable);
+                }
+                else
+                    bmImage.get().setImageBitmap(result);
+            }
+            bmImage = null;
         }
     }
 }

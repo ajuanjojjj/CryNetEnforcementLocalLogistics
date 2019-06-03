@@ -10,8 +10,8 @@
 
 
     <LinearLayout
-        android:layout_width="591dp"
-        android:layout_height="331dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
         android:layout_marginEnd="20dp"
         android:layout_marginBottom="60dp"
         android:orientation="horizontal"
@@ -19,14 +19,14 @@
         app:layout_constraintEnd_toEndOf="parent">
 
         <com.google.android.gms.maps.MapView
-            android:id="@+id/mapView3"
+            android:id="@+id/mapView"
             android:layout_width="match_parent"
             android:layout_height="match_parent" />
     </LinearLayout>
 
 
     <ImageView
-        android:id="@+id/imageView5"
+        android:id="@+id/iconbackground"
         android:layout_width="137dp"
         android:layout_height="126dp"
         android:layout_marginStart="52dp"
@@ -37,7 +37,7 @@
         app:srcCompat="@color/crynetBlue" />
 
     <ImageView
-        android:id="@+id/imageView3"
+        android:id="@+id/icon"
         android:layout_width="65dp"
         android:layout_height="65dp"
         android:layout_marginStart="92dp"
@@ -48,7 +48,7 @@
         app:srcCompat="@drawable/googleg_standard_color_18" />
 
     <ImageView
-        android:id="@+id/imageView4"
+        android:id="@+id/background"
         android:layout_width="0dp"
         android:layout_height="0dp"
         android:contentDescription="@null"

@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <integer-array name="icons_depts">
+        <item>@drawable/dept_board</item>
+        <item>@drawable/dept_research_biochemical</item>
+        <item>@drawable/dept_research_mechanical</item>
+        <item>@drawable/dept_research_energy</item>
+        <item>@drawable/dept_research_clash</item>
+        <item>@drawable/dept_energy_backup</item>
+        <item>@drawable/dept_energy_control</item>
+        <item>@drawable/dept_harvesting</item>
+        <item>@drawable/dept_field_maintance</item>
+        <item>@drawable/dept_security_field</item>
+        <item>@drawable/dept_security_station</item>
+        <item>@drawable/dept_security_private</item>
+        <item>@drawable/dept_combat_task</item>
+        <item>@drawable/dept_combat_intel</item>
+        <item>@drawable/dept_combat_marksman</item>
+        <item>@drawable/dept_combat_heavy</item>
+        <item>@drawable/dept_command</item>
+        <item>@drawable/dept_delta</item>
+    </integer-array>
+</resources>

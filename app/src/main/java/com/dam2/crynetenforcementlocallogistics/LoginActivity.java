@@ -11,6 +11,7 @@ import android.os.AsyncTask;
 import android.os.Build;
 import android.os.Bundle;
 import android.text.TextUtils;
+import android.util.Log;
 import android.view.KeyEvent;
 import android.view.View;
 import android.view.View.OnClickListener;
@@ -19,20 +20,20 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
 
+import java.io.BufferedInputStream;
+import java.io.BufferedOutputStream;
+import java.io.BufferedReader;
+import java.io.InputStream;
+import java.io.InputStreamReader;
+import java.io.OutputStream;
+import java.net.HttpURLConnection;
+import java.net.URL;
+import java.nio.charset.StandardCharsets;
+
 /**
  * A login screen that offers login via email/password.
  */
 public class LoginActivity extends AppCompatActivity {
-
-    /**
-     * A dummy authentication store containing known user names and passwords.
-     * TODO: remove after connecting to a real authentication system.
-     */
-    private static final String[] DUMMY_CREDENTIALS = new String[]{
-            "bar@example.com:world",    //NON-NLS
-            "juanjo:hola",              //NON-NLS
-    };
-
     private static final String PASSWORD = "password";   //NON-NLS
     private static final String EMAIL = "email";         //NON-NLS
 
@@ -79,11 +80,9 @@ public class LoginActivity extends AppCompatActivity {
         btn_Abort.setOnClickListener(new OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(getApplicationContext(), MainActivity.class);
-                intent.putExtra(EMAIL, mEmailView.getText());
-                intent.putExtra(PASSWORD, mPasswordView.getText());
-                startActivity(intent);
-                finish();
+                showProgress(true);
+                mAuthTask = new UserLoginTask();
+                mAuthTask.execute("jhargreave@hrbiomed.corp", "PASSDETEST");
             }
         });
 
@@ -138,8 +137,8 @@ public class LoginActivity extends AppCompatActivity {
             // Show a progress spinner, and kick off a background task to
             // perform the user login attempt.
             showProgress(true);
-            mAuthTask = new UserLoginTask(email, password);
-            mAuthTask.execute();
+            mAuthTask = new UserLoginTask();
+            mAuthTask.execute(email, password);
 
         }
     }
@@ -187,54 +186,68 @@ public class LoginActivity extends AppCompatActivity {
     /**
      * Represents an asynchronous login/registration task used to authenticate the user.
      */
-    class UserLoginTask extends AsyncTask<Void, Void, Boolean> {
+    class UserLoginTask extends AsyncTask<String, Void, String> {
 
         static final String PASSWORD = LoginActivity.PASSWORD;
         static final String EMAIL = LoginActivity.EMAIL;
-        private final String mEmail;
-        private final String mPassword;
-
+        private static final String URI = "http://crynet.wunderapp.es/servicios/login";
+        private String mEmail;
+        private String mPassword;
+/*
         UserLoginTask(String email, String password) {
             mEmail = email;
             mPassword = password;
         }
-
+*/
         @Override
-        protected Boolean doInBackground(Void... params) {
-            // TODO: attempt authentication against a network service.
-
+        protected String doInBackground(String... params) {
+            HttpURLConnection urlConnection = null;
             try {
-                // Simulate network access.
-                Thread.sleep(1000);
-            } catch (InterruptedException e) {
-                return false;
-            }
+                URL url = new URL(URI);
+                urlConnection = (HttpURLConnection) url.openConnection();
+                try {
+                    urlConnection.setRequestMethod("GET");
+                    urlConnection.setRequestProperty("Content-Type", "application/" + "json");
+                    urlConnection.setDoOutput(true);
+                    //urlConnection.setRequestProperty("Authorization", "Bearer " + App.token);
 
-            for (String credential : DUMMY_CREDENTIALS) {
-                String[] pieces = credential.split(":");
-                if (pieces[0].equals(mEmail)) {
-                    // Account exists, return true if the password matches.
-                    return pieces[1].equals(mPassword);
+                    String json = "{\"login\": \"" + params[0] + "\",\"password\":\"" + params[1] + "\"}";
+                    byte[] outputInBytes = json.getBytes(StandardCharsets.UTF_8);
+
+
+                    OutputStream out = new BufferedOutputStream(urlConnection.getOutputStream());
+                    out.write( outputInBytes );
+                    out.close();
+
+                    BufferedReader in = new BufferedReader(new InputStreamReader(urlConnection.getInputStream(), StandardCharsets.UTF_8));
+                    String token =  in.readLine().replace("\"", "");
+                    return token;
+
+                } finally {
+                    urlConnection.disconnect();
                 }
+            } catch (Exception ex) {
+                Log.e("Error en login", ex.getMessage());
+                //int responseCode = urlConnection.getResponseCode(); //can call this instead of con.connect()
+                /*if (responseCode >= 400 && responseCode <= 499) {
+                    throw new Exception("Bad authentication status: " + responseCode); //provide a more meaningful exception message
+                }*/
+                return null;
             }
-
-            // TODO: register the new account here.
-            return true;
         }
 
         @Override
-        protected void onPostExecute(final Boolean success) {
+        protected void onPostExecute(final String token) {
             mAuthTask = null;
             showProgress(false);
 
-            if (success) {
+            if (token != null) {
                 Intent intent = new Intent(getApplicationContext(), MainActivity.class);
-                intent.putExtra(EMAIL, mEmail);
-                intent.putExtra(PASSWORD, mPassword);
+                App.token = token;
                 startActivity(intent);
                 finish();
             } else {
-                mPasswordView.setError(getString(R.string.error_incorrect_password));
+                mPasswordView.setError(getString(R.string.error_incorrect_login));
                 mPasswordView.requestFocus();
             }
         }
