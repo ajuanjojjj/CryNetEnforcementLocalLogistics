@@ -27,7 +27,7 @@ This work is licensed under a [Creative Commons Attribution-NoDerivatives 4.0 In
 |Documentacion	|	Crear diagrama de despligue						|	1	|	Actualizar	    |	1		|	1	|
 |Documentacion	|	Crear diagrama de casos de uso					|	2	|	Actualizar	    |	1		|	1.5	|
 |Documentacion	|	Crear diagrama Entidad-Relacion					|	0.1	|	Actualizar	    |	2		|	0.2	|
-|Documentacion	|	Crear memoria de proyecto						|	-	|	Pendiente	    |	-		|	1	|
+|Documentacion	|	Crear memoria de proyecto						|	-	|	Pendiente	    |	-		|	2	|
 |Documentacion	|	Documentar metodología ágil						|	-	|	Pendiente	    |	-		|	-	|
 |Pruebas		|	Crear batería de pruebas para algoritmo claves	|	-	|	Pendiente	    |	-		|	2.5	|
 |Pruebas		|	Probar navegacion y uso con usuarios			|	-	|	Pendiente	    |	-		|	-	|
