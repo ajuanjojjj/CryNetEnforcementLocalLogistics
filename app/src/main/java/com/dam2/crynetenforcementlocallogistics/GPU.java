@@ -14,7 +14,7 @@ import java.util.Date;
 class GPU {
     private static final String GPU_DATE = "fecha";             //NON-NLS
     private static final String GPU_DESC = "description";       //NON-NLS
-    private static final String GPU_URL = "URL";                //NON-NLS
+    private static final String GPU_URL = "url";                //NON-NLS
     private static final String GPU_CRITICAL = "criticality";   //NON-NLS
 
 
@@ -76,7 +76,7 @@ class GPU {
                         gpu.setDescription(json.nextString());
                         break;
                     case GPU_URL:
-                        gpu.setUri(Uri.parse(json.nextString()));
+                        gpu.setUri(Uri.parse("http://"+json.nextString()));
                         break;
                     case GPU_CRITICAL:
                         gpu.setCriticality(json.nextInt());
