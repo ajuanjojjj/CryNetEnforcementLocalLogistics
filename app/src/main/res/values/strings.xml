@@ -32,9 +32,9 @@
     <string name="btnResponderTodos">Responder a todos</string>
     <string name="map_logo">Logo del menu de mapa</string>
     <string name="notImplemented">Función no implementada</string>
-    <string name="main_email">Area Personal</string>
-    <string name="main_personal">Empleados</string>
-    <string name="main_wharehouse">Almacen</string>
+    <string name="main_email">Personal Space</string>
+    <string name="main_personal">Employees</string>
+    <string name="main_wharehouse">Wharehouse</string>
     <string name="main_map">Map</string>
     <string name="main_keys">Keys</string>
     <string name="report_title">Send a Report to HQ</string>
