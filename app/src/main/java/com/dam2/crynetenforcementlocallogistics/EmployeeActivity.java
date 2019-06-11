@@ -72,6 +72,7 @@ public class EmployeeActivity extends AppCompatActivity {
         txt_city.setText(empleado.getCity());
         txt_payGrade.setText(empleado.getPayGrade());
         new Employee.DownloadImageTask(fotoEmpl).execute(empleado.getPhoto());
+
         int iconId = empleado.getDepartament().getIconId();
         TypedArray array = getResources().obtainTypedArray(R.array.icons_depts);
         iconDept.setImageResource(array.getResourceId(iconId - 1, -1));
@@ -130,6 +131,7 @@ public class EmployeeActivity extends AppCompatActivity {
         protected void onPostExecute(List<Employee> unused) {
             super.onPostExecute(unused);
             progDailog.dismiss();
+            mostrarDatos(numero++ );
         }
 
         private List<Employee> readStream(List<Employee> employeeList, InputStream in) throws IOException {

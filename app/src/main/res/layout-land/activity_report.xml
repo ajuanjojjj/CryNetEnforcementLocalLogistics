@@ -1,0 +1,123 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:orientation="vertical"
+    android:paddingTop="10dp"
+    style="@style/CrynetContainer">
+
+    <ImageView
+        android:id="@+id/Title"
+        style="@style/CrynetTitle"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:adjustViewBounds="true"
+        android:contentDescription="@string/login_image_logo"
+        android:scaleType="fitCenter"
+        app:srcCompat="@drawable/crynet_systems" />
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_weight="1">
+
+        <LinearLayout
+            style="@style/CrynetSubcontainer"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/txt_title"
+                style="@style/crynetField.Mail"
+                android:text="@string/report_title"
+                android:textAlignment="viewStart"
+                android:textSize="24sp" />
+
+            <View
+                android:id="@+id/divider2"
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:layout_marginTop="10dp"
+                android:layout_marginBottom="10dp"
+                android:background="?android:attr/listDivider" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+                <TextView
+                    android:id="@+id/lbl_Report"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:labelFor="@+id/txt_Report"
+                    android:text="@string/report_explain" />
+
+                <EditText
+                    android:id="@+id/txt_Report"
+                    android:layout_width="match_parent"
+                    android:layout_height="50dp"
+                    android:autofillHints="@string/report_write_here"
+                    android:ems="10"
+                    android:inputType="textLongMessage"
+                    android:singleLine="false"
+                    tools:targetApi="o" />
+
+                <TextView
+                    android:id="@+id/lbl_Threat"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:labelFor="@+id/spn_Threat"
+                    android:text="@string/report_select" />
+
+                <Spinner
+                    android:id="@+id/spn_Threat"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:entries="@array/spnThreat" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="15dp"
+                android:gravity="center"
+                android:orientation="vertical">
+
+                <Button
+                    android:id="@+id/button9"
+                    style="@style/crynetButton"
+                    android:layout_width="match_parent"
+                    android:onClick="enviarMensaje"
+                    android:text="@string/report_send" />
+
+            </LinearLayout>
+
+            <Space
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1" />
+
+            <TextView
+                android:id="@+id/txt_warnReport"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/report_sanction"
+                android:textAlignment="viewEnd"
+                android:textSize="12sp" />
+
+            <TextView
+                android:id="@+id/textView5"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/report_sent_info"
+                android:textAlignment="viewEnd"
+                android:textSize="12sp" />
+        </LinearLayout>
+    </ScrollView>
+
+</LinearLayout>

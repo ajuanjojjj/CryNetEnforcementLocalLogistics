@@ -2,6 +2,7 @@
 
 <android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/ConstraintLayout"
     style="@style/CrynetContainer"
     android:layout_width="match_parent"
@@ -27,9 +28,9 @@
 
     <ImageView
         android:id="@+id/iconbackground"
-        android:layout_width="137dp"
-        android:layout_height="126dp"
-        android:layout_marginStart="52dp"
+        android:layout_width="110dp"
+        android:layout_height="100dp"
+        android:layout_marginStart="50dp"
         android:layout_marginBottom="36dp"
         android:contentDescription="@null"
         app:layout_constraintBottom_toBottomOf="parent"
@@ -38,8 +39,8 @@
 
     <ImageView
         android:id="@+id/icon"
-        android:layout_width="65dp"
-        android:layout_height="65dp"
+        android:layout_width="35dp"
+        android:layout_height="35dp"
         android:layout_marginStart="92dp"
         android:layout_marginBottom="68dp"
         android:contentDescription="@null"

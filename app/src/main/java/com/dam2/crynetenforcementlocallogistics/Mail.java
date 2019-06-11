@@ -75,7 +75,7 @@ class Mail implements Serializable {
                         mail.setSubject(json.nextString());
                         break;
                     case MAIL_BODY:
-                        mail.setBody(json.nextString());
+                        mail.setBody(json.nextString().replace("<br/>", "\n          "));
                         break;
                     case MAIL_SENDER:
                         json.beginObject();

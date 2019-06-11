@@ -75,7 +75,7 @@ public class MapActivity extends AppCompatActivity implements OnMapReadyCallback
     @Override
     public void onMapReady(GoogleMap googleMap) {
         googleMap.setMinZoomPreference(12);
-        LatLng ny = new LatLng(40.7143528, -74.0059731);
+        LatLng ny = new LatLng(42.4695345, -2.4297581);
         googleMap.moveCamera(CameraUpdateFactory.newLatLng(ny));
     }
 }

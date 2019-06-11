@@ -30,6 +30,7 @@ public class KeypadActivity extends AppCompatActivity implements NfcAdapter.Crea
 
     private char[] typedValues;
     private char[] typedChars;
+    private boolean encendido = false;
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -59,6 +60,7 @@ public class KeypadActivity extends AppCompatActivity implements NfcAdapter.Crea
             botones[i] = findViewById(id);
         }
         fillButtons();
+        encendido = true;
     }
 
     private void fillButtons() {
@@ -82,6 +84,8 @@ public class KeypadActivity extends AppCompatActivity implements NfcAdapter.Crea
     }
 
     public void pulsarBoton(View v) {
+        if (!encendido)
+            return;
         Tag tag = (Tag) v.getTag();
         TextView view = findViewById(R.id.txt_typedKey);
 

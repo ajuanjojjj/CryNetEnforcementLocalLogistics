@@ -85,6 +85,7 @@
                 android:id="@+id/button9"
                 style="@style/crynetButton"
                 android:layout_width="match_parent"
+                android:onClick="enviarMensaje"
                 android:text="@string/report_send" />
 
         </LinearLayout>

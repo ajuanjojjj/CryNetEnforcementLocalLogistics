@@ -1,7 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
     style="@style/CrynetContainer"
     android:gravity="center"
     android:orientation="vertical">
@@ -18,68 +17,53 @@
 
     <LinearLayout
         style="@style/CrynetSubcontainer"
-
         android:gravity="center_vertical"
-        android:orientation="vertical">
+        android:orientation="horizontal"
+        android:paddingTop="100dp"
+        android:paddingBottom="100dp"
+        android:baselineAligned="false">
 
         <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="horizontal">
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_margin="5dp"
+            android:layout_weight="1"
+            android:orientation="vertical">
 
             <Button
                 android:id="@+id/btn_mail"
                 style="@style/CrynetButtonIcon"
                 android:text="@string/main_email" />
 
-            <Space
-                android:layout_width="0dp"
-                android:layout_height="0dp"
-                android:layout_weight="1" />
+            <Button
+                android:id="@+id/btn_wharehouse"
+                style="@style/CrynetButtonIcon"
+                android:enabled="false"
+                android:text="@string/main_wharehouse" />
+
+            <Button
+                android:id="@+id/btn_report"
+                style="@style/CrynetButtonIcon"
+                android:text="Report" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_margin="5dp"
+            android:layout_weight="1"
+            android:orientation="vertical">
 
             <Button
                 android:id="@+id/btn_personal"
                 style="@style/CrynetButtonIcon"
                 android:text="@string/main_personal" />
-        </LinearLayout>
-
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="horizontal">
-
-            <Button
-                android:id="@+id/btn_wharehouse"
-                style="@style/CrynetButtonIcon"
-                android:text="@string/main_wharehouse" />
-
-            <Space
-                android:layout_width="0dp"
-                android:layout_height="0dp"
-                android:layout_weight="1" />
 
             <Button
                 android:id="@+id/btn_map"
                 style="@style/CrynetButtonIcon"
                 android:text="@string/main_map" />
-
-        </LinearLayout>
-
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="horizontal">
-
-            <Button
-                android:id="@+id/btn_report"
-                style="@style/CrynetButtonIcon"
-                android:text="Report"
-                tools:ignore="HardcodedText" />
-
-            <Space
-                android:layout_width="0dp"
-                android:layout_height="0dp"
-                android:layout_weight="1" />
 
             <Button
                 android:id="@+id/btn_keypad"

@@ -59,11 +59,20 @@ class MailsAdapterMail extends RecyclerView.Adapter<MailsViewHolderMail> {
 
         // Set item views based on your views and data model
         TextView txt_cabecera = viewHolder.txt_Cabecera;
-        txt_cabecera.setText(mail.getSubject());
+        if(mail.getSubject().length() < 30)
+            txt_cabecera.setText(mail.getSubject());
+        else {
+            String text = mail.getSubject().substring(0, 26) + "...";
+            txt_cabecera.setText(text);
+        }
 
         TextView txt_cuerpo = viewHolder.txt_Cuerpo;
-        txt_cuerpo.setText(mail.getBody());
-
+        if(mail.getBody().length() < 40)
+            txt_cuerpo.setText(mail.getBody());
+        else {
+            String text = mail.getBody().substring(0, 37).trim() + "...";
+            txt_cuerpo.setText(text);
+        }
         viewHolder.getAdapterPosition();
     }
 
